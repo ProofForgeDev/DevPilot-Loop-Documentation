@@ -1,0 +1,48 @@
+# ============================================================
+# DevPilot Loop — Worker Agent 配置（Knowledge）
+# ============================================================
+# Agent 类型: worker
+# 职责: 汇总全流程 trace，生成复盘报告，沉淀 Runbook
+# 对应文档: docs/03-agents.md § Agent 7
+# ============================================================
+
+agent:
+  name: knowledge
+  type: worker
+  description: 知识沉淀工程师。汇总全流程 trace、生成复盘报告、沉淀 Runbook 与 Skill 模板。
+
+model:
+  provider: openai-compatible
+  endpoint: http://higress:8080/v1/chat/completions
+  model_name: qwen-max
+  temperature: 0.2
+  max_tokens: 2048
+
+skills:
+  - name: postmortem-capture
+    version: "0.1.0"
+    path: ../../poc/skills/postmortem-capture
+
+tools:
+  - name: knowledge_base
+    type: mcp
+    endpoint: http://higress:8080/mcp/wiki
+    permissions:
+      - write:knowledge-base
+  - name: llm_gateway
+    type: mcp
+    endpoint: http://higress:8080/mcp/llm
+    permissions:
+      - use:llm
+
+concurrency:
+  max_concurrent_tasks: 1
+  task_timeout_seconds: 30
+
+escalation:
+  max_retry_count: 3
+  systematic_issue_threshold: 3  # 同类缺陷 ≥3 次 → 上报流程改进建议
+
+outbound:
+  matrix_room: "#devpilot-loop:devpilot.local"
+  log_dir: /data/logs

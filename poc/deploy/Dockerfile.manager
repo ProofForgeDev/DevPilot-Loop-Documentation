@@ -1,0 +1,28 @@
+# ============================================================
+# DevPilot Loop — Manager Agent 基础镜像
+# ============================================================
+# 基于 AgentTeams openclaw-base，预装 HiClaw CLI
+# 参考: https://github.com/agentscope-ai/AgentTeams
+# ============================================================
+
+FROM agentteams/openclaw-base:20260423-8359cbc
+
+# 安装 AgentTeams CLI
+COPY --from=agentteams/agentteams-controller:latest \
+  /usr/local/bin/agt /usr/local/bin/agt
+
+# 复制 Skill 包（只读挂载）
+COPY poc/skills /opt/devpilot/skills
+
+# 复制 Agent 配置（只读挂载）
+COPY poc/deploy/agents/devlead /opt/devpilot/agents/devlead
+
+# 设置工作目录
+WORKDIR /opt/devpilot
+
+# 健康检查
+HEALTHCHECK --interval=30s --timeout=10s --retries=3 \
+  CMD agt agent health devlead || exit 1
+
+# 启动入口
+ENTRYPOINT ["agt", "agent", "run", "--type", "manager", "--name", "devlead"]

@@ -1,0 +1,253 @@
+services:
+  # ============================================================
+  # HiClaw / AgentTeams 基础设施（PoC 本地测试用）
+  # 生产环境请替换为真实部署（Higress + Synapse + MinIO）
+  # ============================================================
+
+  # ---- Matrix Synapse（Agent 通信房间） ----
+  synapse:
+    image: matrixdotorg/synapse:latest
+    container_name: devpilot-synapse
+    ports:
+      - "8008:8008"
+    volumes:
+      - ./data/synapse:/data
+    environment:
+      SYNAPSE_SERVER_NAME: "devpilot.local"
+      SYNAPSE_REPORT_STATS: "no"
+      MATRIX_UID_GID: "1000"
+    networks:
+      - devpilot-network
+    restart: unless-stopped
+
+  # ---- MinIO（对象存储：Agent 配置 / Skill 包 / Trace 数据） ----
+  minio:
+    image: minio/minio:latest
+    container_name: devpilot-minio
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - ./data/minio:/data
+    environment:
+      MINIO_ROOT_USER: devpilot
+      MINIO_ROOT_PASSWORD: devpilot123
+    networks:
+      - devpilot-network
+    restart: unless-stopped
+
+  # ---- Manager Agent（DevLead） ----
+  manager:
+    build:
+      context: ../..
+      dockerfile: poc/deploy/Dockerfile.manager
+    image: devpilot/manager:latest
+    container_name: devpilot-manager
+    ports:
+      - "8008:8008"
+    volumes:
+      - ./agents/devlead:/agents/devlead:ro
+      - ./skills:/skills:ro
+      - ./data/manager:/data
+    environment:
+      AGENT_TYPE: manager
+      AGENT_NAME: devlead
+      MATRIX_HOMESERVER: http://synapse:8008
+      MINIO_ENDPOINT: minio:9000
+      MINIO_USER: devpilot
+      MINIO_PASSWORD: devpilot123
+      LLM_GATEWAY_URL: http://higress:8080  # 生产环境替换为真实 Higress
+      AGENTTEAMS_RUNTIME: embedded
+    depends_on:
+      - synapse
+      - minio
+    networks:
+      - devpilot-network
+    restart: unless-stopped
+
+  # ---- Worker Agents（6 个，共享网络，独立 volume） ----
+  worker-intake:
+    build:
+      context: ../..
+      dockerfile: poc/deploy/Dockerfile.worker
+    image: devpilot/worker:latest
+    container_name: devpilot-worker-intake
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./agents/intake:/agents/intake:ro
+      - ./skills:/skills:ro
+      - ./data/worker-intake:/data
+    environment:
+      AGENT_TYPE: worker
+      AGENT_NAME: intake
+      MANAGER_URL: http://manager:8008
+      MATRIX_HOMESERVER: http://synapse:8008
+      MINIO_ENDPOINT: minio:9000
+      MINIO_USER: devpilot
+      MINIO_PASSWORD: devpilot123
+      LLM_GATEWAY_URL: http://higress:8080
+      SKILL_NAME: defect-triage
+    depends_on:
+      - manager
+      - synapse
+      - minio
+    networks:
+      - devpilot-network
+    restart: unless-stopped
+
+  worker-analyst:
+    build:
+      context: ../..
+      dockerfile: poc/deploy/Dockerfile.worker
+    image: devpilot/worker:latest
+    container_name: devpilot-worker-analyst
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./agents/analyst:/agents/analyst:ro
+      - ./skills:/skills:ro
+      - ./data/worker-analyst:/data
+    environment:
+      AGENT_TYPE: worker
+      AGENT_NAME: analyst
+      MANAGER_URL: http://manager:8008
+      MATRIX_HOMESERVER: http://synapse:8008
+      MINIO_ENDPOINT: minio:9000
+      MINIO_USER: devpilot
+      MINIO_PASSWORD: devpilot123
+      LLM_GATEWAY_URL: http://higress:8080
+      SKILL_NAME: code-root-cause
+    depends_on:
+      - manager
+      - synapse
+      - minio
+    networks:
+      - devpilot-network
+    restart: unless-stopped
+
+  worker-fixer:
+    build:
+      context: ../..
+      dockerfile: poc/deploy/Dockerfile.worker
+    image: devpilot/worker:latest
+    container_name: devpilot-worker-fixer
+    ports:
+      - "8003:8003"
+    volumes:
+      - ./agents/fixer:/agents/fixer:ro
+      - ./skills:/skills:ro
+      - ./data/worker-fixer:/data
+    environment:
+      AGENT_TYPE: worker
+      AGENT_NAME: fixer
+      MANAGER_URL: http://manager:8008
+      MATRIX_HOMESERVER: http://synapse:8008
+      MINIO_ENDPOINT: minio:9000
+      MINIO_USER: devpilot
+      MINIO_PASSWORD: devpilot123
+      LLM_GATEWAY_URL: http://higress:8080
+      SKILL_NAME: fix-generator
+    depends_on:
+      - manager
+      - synapse
+      - minio
+    networks:
+      - devpilot-network
+    restart: unless-stopped
+
+  worker-verifier:
+    build:
+      context: ../..
+      dockerfile: poc/deploy/Dockerfile.worker
+    image: devpilot/worker:latest
+    container_name: devpilot-worker-verifier
+    ports:
+      - "8004:8004"
+    volumes:
+      - ./agents/verifier:/agents/verifier:ro
+      - ./skills:/skills:ro
+      - ./data/worker-verifier:/data
+    environment:
+      AGENT_TYPE: worker
+      AGENT_NAME: verifier
+      MANAGER_URL: http://manager:8008
+      MATRIX_HOMESERVER: http://synapse:8008
+      MINIO_ENDPOINT: minio:9000
+      MINIO_USER: devpilot
+      MINIO_PASSWORD: devpilot123
+      LLM_GATEWAY_URL: http://higress:8080
+      SKILL_NAME: test-runner
+    depends_on:
+      - manager
+      - synapse
+      - minio
+    networks:
+      - devpilot-network
+    restart: unless-stopped
+
+  worker-release:
+    build:
+      context: ../..
+      dockerfile: poc/deploy/Dockerfile.worker
+    image: devpilot/worker:latest
+    container_name: devpilot-worker-release
+    ports:
+      - "8005:8005"
+    volumes:
+      - ./agents/release:/agents/release:ro
+      - ./skills:/skills:ro
+      - ./data/worker-release:/data
+    environment:
+      AGENT_TYPE: worker
+      AGENT_NAME: release
+      MANAGER_URL: http://manager:8008
+      MATRIX_HOMESERVER: http://synapse:8008
+      MINIO_ENDPOINT: minio:9000
+      MINIO_USER: devpilot
+      MINIO_PASSWORD: devpilot123
+      LLM_GATEWAY_URL: http://higress:8080
+      SKILL_NAME: canary-release
+    depends_on:
+      - manager
+      - synapse
+      - minio
+    networks:
+      - devpilot-network
+    restart: unless-stopped
+
+  worker-knowledge:
+    build:
+      context: ../..
+      dockerfile: poc/deploy/Dockerfile.worker
+    image: devpilot/worker:latest
+    container_name: devpilot-worker-knowledge
+    ports:
+      - "8006:8006"
+    volumes:
+      - ./agents/knowledge:/agents/knowledge:ro
+      - ./skills:/skills:ro
+      - ./data/worker-knowledge:/data
+    environment:
+      AGENT_TYPE: worker
+      AGENT_NAME: knowledge
+      MANAGER_URL: http://manager:8008
+      MATRIX_HOMESERVER: http://synapse:8008
+      MINIO_ENDPOINT: minio:9000
+      MINIO_USER: devpilot
+      MINIO_PASSWORD: devpilot123
+      LLM_GATEWAY_URL: http://higress:8080
+      SKILL_NAME: postmortem-capture
+    depends_on:
+      - manager
+      - synapse
+      - minio
+    networks:
+      - devpilot-network
+    restart: unless-stopped
+
+networks:
+  devpilot-network:
+    driver: bridge
+    name: devpilot-network

@@ -1,0 +1,49 @@
+# ============================================================
+# DevPilot Loop — Worker Agent 配置（Verifier）
+# ============================================================
+# Agent 类型: worker
+# 职责: 沙箱环境执行测试，输出测试报告与通过/驳回判定
+# 对应文档: docs/03-agents.md § Agent 5
+# ============================================================
+
+agent:
+  name: verifier
+  type: worker
+  description: 测试验证工程师。在沙箱环境执行测试、运行回归测试、输出测试报告。
+
+model:
+  provider: openai-compatible
+  endpoint: http://higress:8080/v1/chat/completions
+  model_name: qwen-haiku
+  temperature: 0.0
+  max_tokens: 512
+
+skills:
+  - name: test-runner
+    version: "0.1.0"
+    path: ../../poc/skills/test-runner
+
+tools:
+  - name: ci_api
+    type: mcp
+    endpoint: http://higress:8080/mcp/ci
+    permissions:
+      - execute:sandbox
+  - name: llm_gateway
+    type: mcp
+    endpoint: http://higress:8080/mcp/llm
+    permissions:
+      - use:llm
+
+concurrency:
+  max_concurrent_tasks: 1
+  task_timeout_seconds: 300  # 5 分钟测试超时
+
+escalation:
+  max_retry_count: 1  # 重试 1 次后降级人工
+  timeout_seconds: 300
+  consecutive_fail_threshold: 2  # 连续 2 次 fail → 上报 DevLead
+
+outbound:
+  matrix_room: "#devpilot-loop:devpilot.local"
+  log_dir: /data/logs

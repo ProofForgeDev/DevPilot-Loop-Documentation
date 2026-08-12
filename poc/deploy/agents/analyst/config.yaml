@@ -1,0 +1,49 @@
+# ============================================================
+# DevPilot Loop — Worker Agent 配置（Analyst）
+# ============================================================
+# Agent 类型: worker
+# 职责: 代码根因定位，输出证据链与影响范围
+# 对应文档: docs/03-agents.md § Agent 3
+# ============================================================
+
+agent:
+  name: analyst
+  type: worker
+  description: 代码根因定位专家。分析缺陷单、定位代码根因、输出证据链与影响范围。
+
+model:
+  provider: openai-compatible
+  endpoint: http://higress:8080/v1/chat/completions
+  model_name: qwen-max
+  temperature: 0.1
+  max_tokens: 2048
+
+skills:
+  - name: code-root-cause
+    version: "0.1.0"
+    path: ../../poc/skills/code-root-cause
+
+tools:
+  - name: git_api
+    type: mcp
+    endpoint: http://higress:8080/mcp/git
+    permissions:
+      - read:git-repo
+  - name: llm_gateway
+    type: mcp
+    endpoint: http://higress:8080/mcp/llm
+    permissions:
+      - use:llm
+
+concurrency:
+  max_concurrent_tasks: 1
+  task_timeout_seconds: 60
+
+escalation:
+  max_retry_count: 3
+  search_expansion_commits: 50  # 扩大搜索最近 50 commits
+  confidence_threshold: 0.7    # root_cause confidence < 0.7 → 上报人工辅助
+
+outbound:
+  matrix_room: "#devpilot-loop:devpilot.local"
+  log_dir: /data/logs
