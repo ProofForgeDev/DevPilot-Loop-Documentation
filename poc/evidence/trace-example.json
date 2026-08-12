@@ -1,0 +1,154 @@
+{
+  "trace_id": "4bf92f3577b34da6a3ce929d0e0e4736",
+  "spans": [
+    {
+      "span_id": "00f067aa0ba902b7",
+      "parent_span_id": null,
+      "name": "agent.devlead",
+      "kind": "INTERNAL",
+      "start_time": "2026-08-14T10:00:00.000Z",
+      "end_time": "2026-08-14T10:00:02.500Z",
+      "attributes": {
+        "gen_ai.agent.name": "DevLead",
+        "gen_ai.agent.type": "manager",
+        "gen_ai.task.source": "issue",
+        "gen_ai.task.priority": "P1"
+      }
+    },
+    {
+      "span_id": "a1b2c3d4e5f60718",
+      "parent_span_id": "00f067aa0ba902b7",
+      "name": "agent.intake",
+      "kind": "INTERNAL",
+      "start_time": "2026-08-14T10:00:02.500Z",
+      "end_time": "2026-08-14T10:00:05.200Z",
+      "attributes": {
+        "gen_ai.agent.name": "Intake",
+        "gen_ai.agent.type": "worker"
+      }
+    },
+    {
+      "span_id": "b2c3d4e5f6071829",
+      "parent_span_id": "a1b2c3d4e5f60718",
+      "name": "skill.defect-triage",
+      "kind": "CLIENT",
+      "start_time": "2026-08-14T10:00:02.600Z",
+      "end_time": "2026-08-14T10:00:05.100Z",
+      "attributes": {
+        "gen_ai.skill.name": "defect-triage",
+        "gen_ai.skill.version": "0.1.0",
+        "gen_ai.skill.output.severity": "P1",
+        "gen_ai.skill.output.confidence": 0.95
+      }
+    },
+    {
+      "span_id": "c3d4e5f607182930",
+      "parent_span_id": "a1b2c3d4e5f60718",
+      "name": "mcp.llm-gateway",
+      "kind": "CLIENT",
+      "start_time": "2026-08-14T10:00:03.000Z",
+      "end_time": "2026-08-14T10:00:04.800Z",
+      "attributes": {
+        "gen_ai.system": "higress-ai-gateway",
+        "gen_ai.request.model": "qwen-max",
+        "gen_ai.usage.input_tokens": 1200,
+        "gen_ai.usage.output_tokens": 350
+      }
+    },
+    {
+      "span_id": "d4e5f60718293041",
+      "parent_span_id": "00f067aa0ba902b7",
+      "name": "agent.analyst",
+      "kind": "INTERNAL",
+      "start_time": "2026-08-14T10:00:05.200Z",
+      "end_time": "2026-08-14T10:00:09.800Z",
+      "attributes": {
+        "gen_ai.agent.name": "Analyst",
+        "gen_ai.agent.type": "worker"
+      }
+    },
+    {
+      "span_id": "e5f6071829304152",
+      "parent_span_id": "d4e5f60718293041",
+      "name": "skill.code-root-cause",
+      "kind": "CLIENT",
+      "start_time": "2026-08-14T10:00:05.300Z",
+      "end_time": "2026-08-14T10:00:09.700Z",
+      "attributes": {
+        "gen_ai.skill.name": "code-root-cause",
+        "gen_ai.skill.version": "0.1.0",
+        "gen_ai.skill.output.confidence": 0.93
+      }
+    },
+    {
+      "span_id": "f607182930415263",
+      "parent_span_id": "00f067aa0ba902b7",
+      "name": "agent.fixer",
+      "kind": "INTERNAL",
+      "start_time": "2026-08-14T10:00:09.800Z",
+      "end_time": "2026-08-14T10:00:14.200Z",
+      "attributes": {
+        "gen_ai.agent.name": "Fixer",
+        "gen_ai.agent.type": "worker",
+        "gen_ai.approval.required": true,
+        "gen_ai.approval.status": "human_approved"
+      }
+    },
+    {
+      "span_id": "0718293041526374",
+      "parent_span_id": "f607182930415263",
+      "name": "skill.fix-generator",
+      "kind": "CLIENT",
+      "start_time": "2026-08-14T10:00:09.900Z",
+      "end_time": "2026-08-14T10:00:14.100Z",
+      "attributes": {
+        "gen_ai.skill.name": "fix-generator",
+        "gen_ai.skill.version": "0.1.0",
+        "gen_ai.skill.output.risk_level": "low"
+      }
+    },
+    {
+      "span_id": "1829304152637485",
+      "parent_span_id": "00f067aa0ba902b7",
+      "name": "agent.verifier",
+      "kind": "INTERNAL",
+      "start_time": "2026-08-14T10:00:14.200Z",
+      "end_time": "2026-08-14T10:00:20.000Z",
+      "attributes": {
+        "gen_ai.agent.name": "Verifier",
+        "gen_ai.agent.type": "worker",
+        "gen_ai.test.total": 5,
+        "gen_ai.test.passed": 5,
+        "gen_ai.test.verdict": "approve"
+      }
+    },
+    {
+      "span_id": "2930415263748596",
+      "parent_span_id": "00f067aa0ba902b7",
+      "name": "agent.release",
+      "kind": "INTERNAL",
+      "start_time": "2026-08-14T10:00:20.000Z",
+      "end_time": "2026-08-14T10:00:25.000Z",
+      "attributes": {
+        "gen_ai.agent.name": "Release",
+        "gen_ai.agent.type": "worker",
+        "gen_ai.approval.required": true,
+        "gen_ai.approval.status": "human_approved",
+        "gen_ai.release.decision": "promote"
+      }
+    },
+    {
+      "span_id": "3041526374859607",
+      "parent_span_id": "00f067aa0ba902b7",
+      "name": "agent.knowledge",
+      "kind": "INTERNAL",
+      "start_time": "2026-08-14T10:00:25.000Z",
+      "end_time": "2026-08-14T10:00:28.000Z",
+      "attributes": {
+        "gen_ai.agent.name": "Knowledge",
+        "gen_ai.agent.type": "worker",
+        "gen_ai.knowledge.runbook_id": "RB-2026-001"
+      }
+    }
+  ]
+}

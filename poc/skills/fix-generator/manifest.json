@@ -1,0 +1,14 @@
+{
+  "name": "fix-generator",
+  "version": "0.1.0",
+  "description": "根据根因分析结果生成修复方案与代码 patch，创建回滚点",
+  "entry": "main",
+  "permissions": ["write:git-branch", "write:git-tag"],
+  "dependencies": [
+    {"name": "llm-gateway", "type": "mcp"},
+    {"name": "git-api-mcp", "type": "mcp"}
+  ],
+  "author": "DevPilot Loop Contributors",
+  "license": "Apache-2.0",
+  "tags": ["fix", "patch", "code-generation"]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "code-root-cause",
+  "version": "0.1.0",
+  "description": "根据结构化缺陷单定位代码根因，输出证据链与影响范围",
+  "entry": "main",
+  "permissions": ["read:git-repo"],
+  "dependencies": [
+    {"name": "llm-gateway", "type": "mcp"},
+    {"name": "git-api-mcp", "type": "mcp"}
+  ],
+  "author": "DevPilot Loop Contributors",
+  "license": "Apache-2.0",
+  "tags": ["root-cause", "analysis", "code"]
+}

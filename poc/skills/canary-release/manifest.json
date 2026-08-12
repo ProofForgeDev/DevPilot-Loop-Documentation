@@ -1,0 +1,14 @@
+{
+  "name": "canary-release",
+  "version": "0.1.0",
+  "description": "执行灰度发布、监控灰度指标、做发布/回滚决策",
+  "entry": "main",
+  "permissions": ["write:k8s-deploy", "read:monitoring"],
+  "dependencies": [
+    {"name": "k8s-api-mcp", "type": "mcp"},
+    {"name": "monitoring-api-mcp", "type": "mcp"}
+  ],
+  "author": "DevPilot Loop Contributors",
+  "license": "Apache-2.0",
+  "tags": ["release", "canary", "deployment"]
+}

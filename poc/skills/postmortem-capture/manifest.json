@@ -1,0 +1,14 @@
+{
+  "name": "postmortem-capture",
+  "version": "0.1.0",
+  "description": "汇总全流程 trace，生成复盘报告，沉淀 Runbook 与 Skill 模板",
+  "entry": "main",
+  "permissions": ["write:knowledge-base"],
+  "dependencies": [
+    {"name": "llm-gateway", "type": "mcp"},
+    {"name": "knowledge-base-mcp", "type": "mcp"}
+  ],
+  "author": "DevPilot Loop Contributors",
+  "license": "Apache-2.0",
+  "tags": ["postmortem", "knowledge", "runbook"]
+}

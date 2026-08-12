@@ -1,0 +1,14 @@
+{
+  "name": "test-runner",
+  "version": "0.1.0",
+  "description": "在沙箱环境执行单元测试与回归测试，输出测试报告",
+  "entry": "main",
+  "permissions": ["execute:sandbox"],
+  "dependencies": [
+    {"name": "ci-api-mcp", "type": "mcp"},
+    {"name": "llm-gateway", "type": "mcp"}
+  ],
+  "author": "DevPilot Loop Contributors",
+  "license": "Apache-2.0",
+  "tags": ["test", "verification", "sandbox"]
+}

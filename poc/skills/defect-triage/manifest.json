@@ -1,0 +1,14 @@
+{
+  "name": "defect-triage",
+  "version": "0.1.0",
+  "description": "缺陷/需求归并去重、结构化为缺陷单、判定优先级",
+  "entry": "main",
+  "permissions": ["read:issue-tracker"],
+  "dependencies": [
+    {"name": "llm-gateway", "type": "mcp"},
+    {"name": "issue-tracker-mcp", "type": "mcp"}
+  ],
+  "author": "DevPilot Loop Contributors",
+  "license": "Apache-2.0",
+  "tags": ["defect", "triage", "intake"]
+}
