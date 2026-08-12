@@ -1,0 +1,81 @@
+DevPilot Loop — Skill 安装验证报告
+时间: 2026-08-12T12:59:00Z
+============================================================
+
+【Part 1】各 Skill execute() 测试
+
+  ✓ code-review v1.0.0: execute()=ok
+  ✓ test-generation v1.0.0: execute()=ok
+  ✓ doc-writing v1.0.0: execute()=ok
+  ✓ security-scan v1.0.0: execute()=ok
+  ✓ perf-analysis v1.0.0: execute()=ok
+  ✓ deploy-verification v1.0.0: execute()=ok
+
+【Part 2】Registry 注册中心
+  ✓ 注册 Skill 数量: 6
+    code-review v1.0.0 — 代码审查：静态分析、最佳实践检查、潜在缺陷检测
+    test-generation v1.0.0 — 测试生成：根据源代码自动生成单元测试用例
+    doc-writing v1.0.0 — 文档编写：API 文档、变更日志、README 自动生成
+    security-scan v1.0.0 — 安全扫描：漏洞检测、硬编码密钥、不安全配置识别
+    perf-analysis v1.0.0 — 性能分析：瓶颈检测、N+1 查询识别、优化建议
+    deploy-verification v1.0.0 — 部署验证：健康检查、回滚策略、服务状态验证
+
+【Part 3】Pytest 测试套件
+============================= test session starts ==============================
+platform darwin -- Python 3.14.6, pytest-9.1.1
+collected 29 items
+
+skills/code_review/tests/test_code_review.py::test_idempotent PASSED     [  3%]
+skills/code_review/tests/test_code_review.py::test_execute_basic PASSED  [  6%]
+skills/code_review/tests/test_code_review.py::test_execute_finds_issues PASSED [ 10%]
+skills/code_review/tests/test_code_review.py::test_validate_input PASSED [ 13%]
+skills/code_review/tests/test_code_review.py::test_get_schema PASSED     [ 17%]
+skills/deploy_verification/tests/test_deploy_verification.py::test_idempotent PASSED [ 20%]
+skills/deploy_verification/tests/test_deploy_verification.py::test_execute_without_url PASSED [ 24%]
+skills/deploy_verification/tests/test_deploy_verification.py::test_rollback_plan PASSED [ 27%]
+skills/deploy_verification/tests/test_deploy_verification.py::test_validate_input PASSED [ 31%]
+skills/deploy_verification/tests/test_deploy_verification.py::test_get_schema PASSED [ 34%]
+skills/doc_writing/tests/test_doc_writing.py::test_idempotent PASSED     [ 37%]
+skills/doc_writing/tests/test_doc_writing.py::test_execute_changelog PASSED [ 41%]
+skills/doc_writing/tests/test_doc_writing.py::test_execute_api PASSED    [ 44%]
+skills/doc_writing/tests/test_doc_writing.py::test_validate_input PASSED [ 48%]
+skills/doc_writing/tests/test_doc_writing.py::test_get_schema PASSED     [ 51%]
+skills/perf_analysis/tests/test_perf_analysis.py::test_idempotent PASSED [ 55%]
+skills/perf_analysis/tests/test_perf_analysis.py::test_detects_n_plus_one PASSED [ 58%]
+skills/perf_analysis/tests/test_perf_analysis.py::test_suggestions PASSED [ 62%]
+skills/perf_analysis/tests/test_perf_analysis.py::test_validate_input PASSED [ 65%]
+skills/perf_analysis/tests/test_perf_analysis.py::test_get_schema PASSED [ 68%]
+skills/security_scan/tests/test_security_scan.py::test_idempotent PASSED [ 72%]
+skills/security_scan/tests/test_security_scan.py::test_finds_hardcoded_secret PASSED [ 75%]
+skills/security_scan/tests/test_security_scan.py::test_clean_code PASSED [ 79%]
+skills/security_scan/tests/test_security_scan.py::test_validate_input PASSED [ 82%]
+skills/security_scan/tests/test_security_scan.py::test_get_schema PASSED [ 86%]
+skills/test_generation/tests/test_test_generation.py::test_idempotent PASSED [ 89%]
+skills/test_generation/tests/test_test_generation.py::test_execute_generates_tests PASSED [ 93%]
+skills/test_generation/tests/test_test_generation.py::test_validate_input PASSED [ 96%]
+skills/test_generation/tests/test_test_generation.py::test_get_schema PASSED [100%]
+
+============================== 29 passed in 0.03s ==============================
+  ✓ Pytest 全部通过（29 tests）
+
+【目录结构】
+skills/
+├── __init__.py              # 包入口，导出所有 Skill 类
+├── base.py                  # BaseSkill 抽象基类
+├── registry.py              # Skill 注册中心
+├── install_test.py          # 安装验证脚本
+├── code_review/
+│   ├── __init__.py
+│   ├── skill.py             # CodeReviewSkill
+│   ├── pyproject.toml
+│   ├── README.md
+│   └── tests/test_code_review.py
+├── test_generation/         # 同上结构
+├── doc_writing/
+├── security_scan/
+├── perf_analysis/
+└── deploy_verification/
+
+============================================================
+结果: 7 passed (6 execute + 1 registry), 0 failed
+============================================================

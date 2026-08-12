@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "devpilot-skills"
+version = "1.0.0"
+description = "DevPilot Loop — 6 个可安装 Skill 模块（code-review, test-generation, doc-writing, security-scan, perf-analysis, deploy-verification）"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+include = ["skills*"]
