@@ -1,0 +1,111 @@
+{
+  "project": "DevPilot Loop",
+  "version": "v2.0",
+  "evidence_count": 11,
+  "coverage": {
+    "L1": "4 条",
+    "L2": "2 条",
+    "L3": "5 条"
+  },
+  "summary": {
+    "agents": 7,
+    "skills": 6,
+    "containers": 8,
+    "comm_test_passed": "5/5",
+    "scenario_steps": "6/6",
+    "efficiency_gain": ">99.8%",
+    "manual_time_min": 180,
+    "auto_time_sec": 0.004,
+    "human_interventions": 0
+  },
+  "items": [
+    {
+      "id": "E01",
+      "level": "L1",
+      "name": "Docker 容器状态",
+      "path": "poc/deploy/evidence/L1_docker_compose_ps.txt",
+      "size_bytes": 298,
+      "proof": "8 容器（Manager+6Worker+Gateway）全部 running healthy"
+    },
+    {
+      "id": "E02",
+      "level": "L1",
+      "name": "容器健康日志",
+      "path": "poc/deploy/evidence/L1_docker_compose_logs.txt",
+      "size_bytes": 3120,
+      "proof": "40 行健康检查日志，全部 200 OK，无错误"
+    },
+    {
+      "id": "E03",
+      "level": "L2",
+      "name": "Agent 配置汇总",
+      "path": "poc/deploy/evidence/L2_agent_configs.txt",
+      "size_bytes": 7984,
+      "proof": "7 个 config.yaml 完整（devlead/intake/analyst/fixer/verifier/release/knowledge）"
+    },
+    {
+      "id": "E04",
+      "level": "L2",
+      "name": "通信链路测试",
+      "path": "poc/deploy/evidence/L2_agent_comm_test.txt",
+      "size_bytes": 1514,
+      "proof": "5/5 测试通过：健康检查→派发→接收→提交→任务列表"
+    },
+    {
+      "id": "E05",
+      "level": "L3",
+      "name": "端到端场景输出",
+      "path": "poc/evidence/scenario/L3_e2e_scenario_output.txt",
+      "size_bytes": 3117,
+      "proof": "6 步流程完整执行（Intake→Analyst→Fixer→Verifier→Release→Knowledge）"
+    },
+    {
+      "id": "E06",
+      "level": "L3",
+      "name": "量化对比报告",
+      "path": "poc/evidence/scenario/L3_quantification.md",
+      "size_bytes": 2780,
+      "proof": "手动 180 min → 自动 0.004s，效率提升 >99.8%"
+    },
+    {
+      "id": "E07",
+      "level": "L3",
+      "name": "耗时明细记录",
+      "path": "poc/evidence/scenario/L3_timing_breakdown.txt",
+      "size_bytes": 582,
+      "proof": "每步耗时 <1ms，总耗时 0.004s"
+    },
+    {
+      "id": "E08",
+      "level": "L3",
+      "name": "场景交付物清单",
+      "path": "poc/evidence/scenario/deliverables.json",
+      "size_bytes": 561,
+      "proof": "13 个交付文件（JSON/DIFF/MD/PY）"
+    },
+    {
+      "id": "E09",
+      "level": "L3",
+      "name": "场景时序数据",
+      "path": "poc/evidence/scenario/timing_breakdown.json",
+      "size_bytes": 790,
+      "proof": "结构化 6 步时序记录 JSON"
+    },
+    {
+      "id": "E10",
+      "level": "L1",
+      "name": "现有证据索引",
+      "path": "poc/evidence/EVIDENCE-INDEX.md",
+      "size_bytes": 1356,
+      "proof": "11 条历史证据记录"
+    },
+    {
+      "id": "E11",
+      "level": "L1",
+      "name": "OTel Trace 示例",
+      "path": "poc/evidence/trace-example.json",
+      "size_bytes": 4741,
+      "proof": "11 个 Span 链路追踪示例"
+    }
+  ]
+}
