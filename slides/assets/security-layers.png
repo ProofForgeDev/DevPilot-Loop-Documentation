@@ -1,0 +1,13 @@
+# Slide Asset Placeholder: security-layers.png
+
+**用途**: slides/deck.md Slide 8（安全审计）引用
+**生成方式**: 需绘制三层权限分级图
+**替代方案**: 使用表格或流程图
+**尺寸建议**: 1280×720（16:9）
+**主题色**: #1A1A2E（深空蓝背景），#00D4FF（青色），#4ECDC4（绿色通过），#FF6B6B（红色拒绝）
+**内容要点**:
+- L1 只读：Intake/Analyst/Knowledge（查询 Issue Tracker / Git / 知识库）
+- L2 写确认：Fixer（创建分支、生成 patch，需 Manager 确认）
+- L3 生产审批：Release（K8s 部署、监控，需人工审批）
+- 零信任凭证：Worker 不持真实密钥，Higress AI 网关管理
+- 审计日志：所有操作写入 Matrix 房间，全程可追溯

@@ -1,0 +1,18 @@
+# Screenshot Placeholder: 03-analyst-rootcause.png
+
+**Evidence #3 — L2 半实机**
+
+- **Agent**: Analyst (Worker)
+- **Skill**: CodeRootCause v0.1.0
+- **事件**: 代码根因定位
+- **证明内容**: Analyst 调用 CodeRootCause Skill，定位 UserService.java:42 行 user 可能为 null
+- **真实性声明**: L2 半实机 — 链路真实（Git API + LLM 调用），根因推理部分桩化
+- **时间戳**: 2026-08-14T10:00:09.800Z
+- **Trace ID**: 4bf92f3577b34da6a3ce929d0e0e4736
+- **对应评分维度**: 多 Agent 协同 25%
+- **PPT 页码**: Slide 6（多 Agent 协同设计）
+- **证据文件**: evidence/screenshots/03-analyst-rootcause.png
+- **日志对应**: poc/evidence/logs/run-001.log line 4
+
+---
+**截图内容描述**: Analyst Worker 输出 root_cause JSON，含 file、line_range、description、confidence=0.93、evidence_chain 数组。

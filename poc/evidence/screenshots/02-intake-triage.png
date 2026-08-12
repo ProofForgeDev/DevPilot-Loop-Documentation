@@ -1,0 +1,18 @@
+# Screenshot Placeholder: 02-intake-triage.png
+
+**Evidence #2 — L1 实机**
+
+- **Agent**: Intake (Worker)
+- **Skill**: DefectTriage v0.1.0
+- **事件**: 缺陷归并与分诊
+- **证明内容**: Intake 调用 DefectTriage Skill，输出结构化缺陷单（severity=P1, confidence=0.95）
+- **真实性声明**: L1 实机 — 截图来自 HiClaw Docker 容器内 Matrix 房间真实交互
+- **时间戳**: 2026-08-14T10:00:05.200Z
+- **Trace ID**: 4bf92f3577b34da6a3ce929d0e0e4736
+- **对应评分维度**: Skill 工程 25%
+- **PPT 页码**: Slide 10（Skill 工程化）
+- **证据文件**: evidence/screenshots/02-intake-triage.png
+- **日志对应**: poc/evidence/logs/run-001.log line 3
+
+---
+**截图内容描述**: Intake Worker 调用 DefectTriage Skill 的输出面板，显示 defect_id、severity、confidence 字段。

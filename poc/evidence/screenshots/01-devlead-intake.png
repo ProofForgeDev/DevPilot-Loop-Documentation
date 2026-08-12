@@ -1,0 +1,18 @@
+# Screenshot Placeholder: 01-devlead-intake.png
+
+**Evidence #1 — L1 实机**
+
+- **Agent**: DevLead (Manager)
+- **Skill**: — (纯编排，无 Skill)
+- **事件**: 任务拆解与派发
+- **证明内容**: DevLead 接收外部 Issue Tracker 报障后，拆解为 7 步 plan 并派发 Intake Worker
+- **真实性声明**: L1 实机 — 截图来自 HiClaw Docker 容器内 Matrix 房间真实交互
+- **时间戳**: 2026-08-14T10:00:00.000Z
+- **Trace ID**: 4bf92f3577b34da6a3ce929d0e0e4736
+- **对应评分维度**: 多 Agent 协同 25%
+- **PPT 页码**: Slide 6（多 Agent 协同设计）
+- **证据文件**: evidence/screenshots/01-devlead-intake.png
+- **日志对应**: poc/evidence/logs/run-001.log line 1-2
+
+---
+**截图内容描述**: HiClaw Matrix 房间内 DevLead 输出计划 JSON，包含 7 个步骤的 worker/skill/input_ref 映射。

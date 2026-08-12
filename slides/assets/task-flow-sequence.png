@@ -1,0 +1,23 @@
+# Slide Asset Placeholder: task-flow-sequence.png
+
+**用途**: slides/deck.md Slide 6（任务流转）引用
+**生成方式**: 需绘制 8 步任务流转时序图
+**替代方案**: 使用 Mermaid sequenceDiagram
+**尺寸建议**: 1280×720（16:9）
+**主题色**: #1A1A2E（深空蓝背景），#00D4FF（青色），#FFD93D（黄色人工节点）
+**内容要点**:
+```
+人类 → DevLead: 外部报障
+DevLead → Intake: plan.step[0]
+Intake → Analyst: defect (P1)
+Analyst → Fixer: root_cause
+Fixer → 人类: ★审批 push
+人类 → Fixer: 确认
+Fixer → Verifier: patch
+Verifier → Release: test_report (approve)
+Release → 人类: ★审批发布
+人类 → Release: 确认
+Release → Knowledge: canary_report
+Knowledge → DevLead: runbook
+DevLead → 人类: 最终交付报告
+```

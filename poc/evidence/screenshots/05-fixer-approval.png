@@ -1,0 +1,18 @@
+# Screenshot Placeholder: 05-fixer-approval.png
+
+**Evidence #5 — L1 实机**
+
+- **Agent**: Fixer → DevLead → Human
+- **Skill**: —
+- **事件**: 人工审批流（L2 写操作确认）
+- **证明内容**: Fixer 生成 patch 后，DevLead 请求人类审批，人类在 Matrix 房间点击确认
+- **真实性声明**: L1 实机 — 截图来自 HiClaw Docker 容器内 Matrix 房间真实审批交互
+- **时间戳**: 2026-08-14T10:00:13.500Z
+- **Trace ID**: 4bf92f3577b34da6a3ce929d0e0e4736
+- **对应评分维度**: 安全可审计 20%
+- **PPT 页码**: Slide 8（安全审计）
+- **证据文件**: evidence/screenshots/05-fixer-approval.png
+- **日志对应**: poc/evidence/logs/run-001.log line 5（approval_status=human_approved）
+
+---
+**截图内容描述**: Matrix 房间内人类审批对话框，显示 patch 预览和"确认/拒绝"按钮，人类点击确认。

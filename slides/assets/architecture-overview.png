@@ -1,0 +1,13 @@
+# Slide Asset Placeholder: architecture-overview.png
+
+**用途**: slides/deck.md Slide 3（架构总览）引用
+**生成方式**: 需绘制 5 层架构图（编排层/协同层/能力层/连接层/治理层）
+**替代方案**: 使用 Mermaid 图表导出或直接绘制 SVG/PNG
+**尺寸建议**: 1280×720（16:9）
+**主题色**: #1A1A2E（深空蓝背景），#00D4FF（青色强调）
+**内容要点**:
+- 顶层：Human（研发负责人）→ Matrix 客户端
+- 第二层：DevLead (Manager) — 任务拆解·调度·升级
+- 第三层：6 Workers 并行（Intake/Analyst/Fixer/Verifier/Release/Knowledge）
+- 第四层：Higress AI 网关 — 凭证集中管理 / Worker 零真实密钥
+- 侧边：全链路 Matrix 房间留痕

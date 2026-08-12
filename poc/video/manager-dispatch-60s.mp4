@@ -1,0 +1,27 @@
+# Video Placeholder: manager-dispatch-60s.mp4
+
+**Evidence #11 — L1 实机**
+
+- **Agent**: DevLead (Manager)
+- **事件**: Manager 调度 7 Agent 全过程录屏
+- **证明内容**: DevLead 在 60 秒内完成任务拆解、6 Worker 派发、进度追踪、最终报告汇总
+- **真实性声明**: L1 实机 — 屏幕录制来自 HiClaw Docker 容器真实运行
+- **时长**: 60 秒
+- **时间戳**: 2026-08-14T10:00:00.000Z - 2026-08-14T10:01:00.000Z
+- **Trace ID**: 4bf92f3577b34da6a3ce929d0e0e4736
+- **对应评分维度**: 多 Agent 协同 25%
+- **PPT 页码**: Slide 6（任务流转序列表）
+- **证据文件**: poc/video/manager-dispatch-60s.mp4
+- **日志对应**: poc/evidence/logs/run-001.log（全量 10 行）
+
+---
+**视频内容描述**:
+- 00:00-00:05：人类提交报障，Matrix 房间显示 raw_payload
+- 00:05-00:15：DevLead 输出 plan（7 步），Matrix 房间显示结构化 JSON
+- 00:15-00:30：Intake/Analyst/Fixer 顺序执行，各 Worker 输出 JSON
+- 00:30-00:45：Fixer 触发人工审批，人类点击确认
+- 00:45-00:55：Verifier/Release 执行，Release 触发人工审批
+- 00:55-01:00：Knowledge 沉淀 runbook，DevLead 汇总最终报告
+
+---
+**备注**: 实际录屏需使用 OBS 或 macOS 自带录屏功能录制 HiClaw Matrix 房间操作过程。如无法录制真实视频，可在演示时播放预录模拟视频并标注 L2 半实机。

@@ -1,0 +1,18 @@
+# Screenshot Placeholder: 06-verifier-test.png
+
+**Evidence #6 — L2 半实机**
+
+- **Agent**: Verifier (Worker)
+- **Skill**: TestRunner v0.1.0
+- **事件**: 测试执行与报告
+- **证明内容**: Verifier 在沙箱环境执行 5 个测试用例，全部通过，输出 test_report（verdict=approve）
+- **真实性声明**: L2 半实机 — CI API 调用真实，测试执行部分桩化
+- **时间戳**: 2026-08-14T10:00:20.000Z
+- **Trace ID**: 4bf92f3577b34da6a3ce929d0e0e4736
+- **对应评分维度**: 工程落地与安全审计 20%
+- **PPT 页码**: Slide 9（工程落地）
+- **证据文件**: evidence/screenshots/06-verifier-test.png
+- **日志对应**: poc/evidence/logs/run-001.log line 6
+
+---
+**截图内容描述**: Verifier Worker 输出测试报告 JSON，含 total=5, passed=5, failed=0, verdict=approve。

@@ -1,0 +1,16 @@
+# Slide Asset Placeholder: skill-agent-matrix.png
+
+**用途**: slides/deck.md Slide 10（Skill 工程化）引用
+**生成方式**: 需绘制 Agent-Skill 复用矩阵表
+**替代方案**: 使用表格 Markdown
+**尺寸建议**: 1280×720（16:9）
+**主题色**: #1A1A2E（深空蓝背景），#00D4FF（青色强调）
+**内容要点**:
+| Agent | Skill | 版本 | 权限 |
+|-------|-------|------|------|
+| Intake | DefectTriage | v0.1.0 | L1 只读 |
+| Analyst | CodeRootCause | v0.1.0 | L1 只读 |
+| Fixer | FixGenerator | v0.1.0 | L2 写确认 |
+| Verifier | TestRunner | v0.1.0 | L1 沙箱 |
+| Release | CanaryRelease | v0.1.0 | L3 生产审批 |
+| Knowledge | PostmortemCapture | v0.1.0 | L1 只写知识库 |

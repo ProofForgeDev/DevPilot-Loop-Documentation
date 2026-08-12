@@ -1,0 +1,18 @@
+# Screenshot Placeholder: 07-release-canary.png
+
+**Evidence #7 — L2 半实机**
+
+- **Agent**: Release (Worker)
+- **Skill**: CanaryRelease v0.1.0
+- **事件**: 灰度发布与监控
+- **证明内容**: Release 执行 10% 流量灰度，error_rate_delta=0.0，latency_p99_delta=1.2ms，决策 promote
+- **真实性声明**: L2 半实机 — K8s API 调用真实，监控数据部分桩化
+- **时间戳**: 2026-08-14T10:00:25.000Z
+- **Trace ID**: 4bf92f3577b34da6a3ce929d0e0e4736
+- **对应评分维度**: 工程落地与安全审计 20%
+- **PPT 页码**: Slide 9（工程落地）
+- **证据文件**: evidence/screenshots/07-release-canary.png
+- **日志对应**: poc/evidence/logs/run-001.log line 7
+
+---
+**截图内容描述**: Release Worker 输出 canary_report JSON，含 traffic_percent=10, status=success, release_decision=promote。

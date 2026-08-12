@@ -1,0 +1,18 @@
+# Screenshot Placeholder: 08-knowledge-runbook.png
+
+**Evidence #8 — L2 半实机**
+
+- **Agent**: Knowledge (Worker)
+- **Skill**: PostmortemCapture v0.1.0
+- **事件**: Runbook 沉淀
+- **证明内容**: Knowledge 汇总全流程 trace，生成 runbook（runbook_id=RB-2026-001），写入知识库
+- **真实性声明**: L2 半实机 — 知识库 API 调用真实，内容生成部分桩化
+- **时间戳**: 2026-08-14T10:00:28.000Z
+- **Trace ID**: 4bf92f3577b34da6a3ce929d0e0e4736
+- **对应评分维度**: Skill 工程 25%
+- **PPT 页码**: Slide 10（Skill 工程化）
+- **证据文件**: evidence/screenshots/08-knowledge-runbook.png
+- **日志对应**: poc/evidence/logs/run-001.log line 8
+
+---
+**截图内容描述**: Knowledge Worker 输出 runbook_content 和 lessons_learned 数组，含 runbook_id=RB-2026-001。

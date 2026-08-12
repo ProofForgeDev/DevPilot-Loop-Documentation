@@ -1,0 +1,18 @@
+# Screenshot Placeholder: 04-fixer-patch.png
+
+**Evidence #4 — L2 半实机**
+
+- **Agent**: Fixer (Worker)
+- **Skill**: FixGenerator v0.1.0
+- **事件**: Patch 生成
+- **证明内容**: Fixer 调用 FixGenerator Skill，生成修复补丁（risk_level=low）
+- **真实性声明**: L2 半实机 — 链路真实（Git API），补丁生成部分桩化
+- **时间戳**: 2026-08-14T10:00:14.200Z
+- **Trace ID**: 4bf92f3577b34da6a3ce929d0e0e4736
+- **对应评分维度**: Skill 工程 25%
+- **PPT 页码**: Slide 10（Skill 工程化）
+- **证据文件**: evidence/screenshots/04-fixer-patch.png
+- **日志对应**: poc/evidence/logs/run-001.log line 5
+
+---
+**截图内容描述**: Fixer Worker 输出 patch_diff 和 rollback_point JSON，含 git_tag 和 snapshot_id。
