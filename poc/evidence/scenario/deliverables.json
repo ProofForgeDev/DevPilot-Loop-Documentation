@@ -1,0 +1,20 @@
+{
+  "scenario": "flask_login_module_security_review",
+  "total_elapsed_sec": 0.0012068748474121094,
+  "deliverables": [
+    "analysis_report.json",
+    "e2e_demo.py",
+    "fix_patch.diff",
+    "fix_report.json",
+    "fixed_login_module.py",
+    "knowledge_entry.json",
+    "login_module.py",
+    "orchestrator_run.py",
+    "quantification.md",
+    "release_manifest.json",
+    "release_notes.md",
+    "task_manifest.json",
+    "verification_report.json"
+  ],
+  "evidence_dir": "/Users/williamdeng/DevPilot_Loop/devpilot-loop/poc/scenario/../evidence/scenario"
+}

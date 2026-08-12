@@ -1,0 +1,61 @@
+{
+  "entry_id": "KNOW-1786536011",
+  "agent": "knowledge",
+  "extracted_at": "2026-08-12T12:00:11.150082+00:00",
+  "category": "flask_security",
+  "tags": [
+    "flask",
+    "jwt",
+    "bcrypt",
+    "security",
+    "rate-limiting"
+  ],
+  "experience": {
+    "scenario": "Flask login module security review",
+    "findings_count": 4,
+    "fixes_applied": 3,
+    "open_issues": 1
+  },
+  "learnings": [
+    {
+      "id": "LEARN-001",
+      "type": "security_pattern",
+      "title": "Flask Secret Key Management",
+      "content": "Always use environment variables for SECRET_KEY in Flask applications. Never hardcode secrets in source files. Use flask-pythondotenv for config management.",
+      "applicable_scenarios": [
+        "web_app_security",
+        "api_authentication"
+      ]
+    },
+    {
+      "id": "LEARN-002",
+      "type": "best_practice",
+      "title": "Login Endpoint Rate Limiting",
+      "content": "Flask-Limiter provides elegant rate limiting for sensitive endpoints. Use app.route('/login', methods=['POST']) with @limiter.limit('5/minute') to prevent brute-force attacks.",
+      "applicable_scenarios": [
+        "auth_protection",
+        "api_hardening"
+      ]
+    },
+    {
+      "id": "LEARN-003",
+      "type": "code_review_checklist",
+      "title": "Web Auth Code Review Checklist",
+      "content": "When reviewing authentication code, check: 1) Secret key management, 2) Input validation, 3) Rate limiting, 4) Debug mode status, 5) Token expiry settings, 6) Password hashing algorithm.",
+      "applicable_scenarios": [
+        "security_review",
+        "code_audit"
+      ]
+    }
+  ],
+  "skill_recommendations": [
+    {
+      "skill": "security-code-review",
+      "confidence": 0.95
+    },
+    {
+      "skill": "flask-best-practices",
+      "confidence": 0.88
+    }
+  ]
+}
