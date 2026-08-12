@@ -1,7 +1,7 @@
 {
-  "entry_id": "KNOW-1786536011",
+  "entry_id": "KNOW-1786547241",
   "agent": "knowledge",
-  "extracted_at": "2026-08-12T12:00:11.150082+00:00",
+  "extracted_at": "2026-08-12T15:07:21.777997+00:00",
   "category": "flask_security",
   "tags": [
     "flask",

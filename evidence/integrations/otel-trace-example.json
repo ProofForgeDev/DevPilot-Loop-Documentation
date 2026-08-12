@@ -1,0 +1,154 @@
+"""
+Trace Example — OpenTelemetry Trace Propagation
+==============================================
+Example trace showing end-to-end task lifecycle
+"""
+
+import json
+from datetime import datetime, timezone
+
+
+def generate_trace_example():
+    """Generate a sample OpenTelemetry trace"""
+    trace_id = "trace-demo-abc123def456"
+    parent_span_id = "span-manager-001"
+
+    spans = [
+        {
+            "trace_id": trace_id,
+            "span_id": "span-manager-dispatch",
+            "parent_span_id": None,
+            "name": "devpilot.manager.dispatch_task",
+            "start_time": "2026-08-12T10:30:00.000Z",
+            "end_time": "2026-08-12T10:30:00.050Z",
+            "duration_ms": 50,
+            "status": "OK",
+            "attributes": {
+                "agent.name": "devlead",
+                "agent.type": "manager",
+                "task.id": "E2E-001",
+                "target.worker": "intake",
+                "priority": "P1",
+            },
+            "events": [
+                {"name": "task.dispatched", "time": "2026-08-12T10:30:00.025Z"},
+                {"name": "task.routed", "time": "2026-08-12T10:30:00.045Z"},
+            ],
+        },
+        {
+            "trace_id": trace_id,
+            "span_id": "span-intake-receive",
+            "parent_span_id": "span-manager-dispatch",
+            "name": "devpilot.intake.receive_task",
+            "start_time": "2026-08-12T10:30:00.050Z",
+            "end_time": "2026-08-12T10:30:00.100Z",
+            "duration_ms": 50,
+            "status": "OK",
+            "attributes": {
+                "agent.name": "intake",
+                "agent.type": "worker",
+                "task.id": "E2E-001",
+                "skill": "triage",
+            },
+            "events": [
+                {"name": "task.received", "time": "2026-08-12T10:30:00.060Z"},
+                {"name": "triage.completed", "time": "2026-08-12T10:30:00.090Z"},
+            ],
+        },
+        {
+            "trace_id": trace_id,
+            "span_id": "span-analyst-analyze",
+            "parent_span_id": "span-intake-receive",
+            "name": "devpilot.analyst.analyze",
+            "start_time": "2026-08-12T10:30:00.100Z",
+            "end_time": "2026-08-12T10:30:00.200Z",
+            "duration_ms": 100,
+            "status": "OK",
+            "attributes": {
+                "agent.name": "analyst",
+                "agent.type": "worker",
+                "task.id": "E2E-001",
+                "skill": "root-cause",
+            },
+            "events": [
+                {"name": "analysis.started", "time": "2026-08-12T10:30:00.110Z"},
+                {"name": "root.cause.found", "time": "2026-08-12T10:30:00.180Z"},
+            ],
+        },
+        {
+            "trace_id": trace_id,
+            "span_id": "span-fixer-fix",
+            "parent_span_id": "span-analyst-analyze",
+            "name": "devpilot.fixer.fix",
+            "start_time": "2026-08-12T10:30:00.200Z",
+            "end_time": "2026-08-12T10:30:00.350Z",
+            "duration_ms": 150,
+            "status": "OK",
+            "attributes": {
+                "agent.name": "fixer",
+                "agent.type": "worker",
+                "task.id": "E2E-001",
+                "skill": "patch",
+            },
+            "events": [
+                {"name": "patch.generated", "time": "2026-08-12T10:30:00.280Z"},
+                {"name": "approval.requested", "time": "2026-08-12T10:30:00.340Z"},
+            ],
+        },
+        {
+            "trace_id": trace_id,
+            "span_id": "span-verifier-verify",
+            "parent_span_id": "span-fixer-fix",
+            "name": "devpilot.verifier.verify",
+            "start_time": "2026-08-12T10:30:00.350Z",
+            "end_time": "2026-08-12T10:30:00.500Z",
+            "duration_ms": 150,
+            "status": "OK",
+            "attributes": {
+                "agent.name": "verifier",
+                "agent.type": "worker",
+                "task.id": "E2E-001",
+                "skill": "test",
+            },
+            "events": [
+                {"name": "tests.started", "time": "2026-08-12T10:30:00.360Z"},
+                {"name": "tests.passed", "time": "2026-08-12T10:30:00.480Z"},
+            ],
+        },
+        {
+            "trace_id": trace_id,
+            "span_id": "span-release-deploy",
+            "parent_span_id": "span-verifier-verify",
+            "name": "devpilot.release.deploy",
+            "start_time": "2026-08-12T10:30:00.500Z",
+            "end_time": "2026-08-12T10:30:00.600Z",
+            "duration_ms": 100,
+            "status": "OK",
+            "attributes": {
+                "agent.name": "release",
+                "agent.type": "worker",
+                "task.id": "E2E-001",
+                "skill": "deploy",
+            },
+            "events": [
+                {"name": "deployment.started", "time": "2026-08-12T10:30:00.510Z"},
+                {"name": "deployment.completed", "time": "2026-08-12T10:30:00.590Z"},
+            ],
+        },
+    ]
+
+    trace = {
+        "trace_id": trace_id,
+        "created_at": "2026-08-12T10:30:00.000Z",
+        "ended_at": "2026-08-12T10:30:00.600Z",
+        "total_duration_ms": 600,
+        "spans": spans,
+        "status": "completed",
+    }
+
+    return trace
+
+
+if __name__ == "__main__":
+    trace = generate_trace_example()
+    print(json.dumps(trace, indent=2))

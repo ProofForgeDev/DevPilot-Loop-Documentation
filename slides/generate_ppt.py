@@ -31,6 +31,7 @@ HEIGHT = Inches(7.5)
 
 BASE_DIR  = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCREENSHOTS = os.path.join(BASE_DIR, "poc", "evidence", "screenshots")
+ASSETS_DIR = os.path.join(BASE_DIR, "slides", "assets")
 EVIDENCE    = os.path.join(BASE_DIR, "poc", "evidence")
 
 

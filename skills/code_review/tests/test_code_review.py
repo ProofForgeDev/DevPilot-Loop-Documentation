@@ -13,7 +13,7 @@ def skill():
 
 def test_idempotent(skill):
     assert skill.name == "code-review"
-    assert skill.version == "1.0.0"
+    assert skill.version == "2.0.0"
     assert "代码审查" in skill.description
 
 

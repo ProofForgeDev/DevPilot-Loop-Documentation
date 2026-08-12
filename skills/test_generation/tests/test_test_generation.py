@@ -13,7 +13,7 @@ def skill():
 
 def test_idempotent(skill):
     assert skill.name == "test-generation"
-    assert skill.version == "1.0.0"
+    assert skill.version == "2.0.0"
 
 
 def test_execute_generates_tests(skill):
