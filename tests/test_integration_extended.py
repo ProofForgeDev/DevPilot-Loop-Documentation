@@ -19,7 +19,7 @@ def test_registry_initialization():
     """Test registry initialization"""
     initialize()
     skills = list_skills()
-    assert len(skills) >= 6
+    assert len(skills) >= 8
     print("  ✓ Registry initialization: loaded", len(skills), "skills")
     return True
 
@@ -116,7 +116,7 @@ def test_multiple_skill_types():
         result = skill.execute(data)
         assert result["status"] == "ok"
 
-    print("  ✓ All 6 skill types execute successfully")
+    print(f"  ✓ All {len(test_cases)} skill types execute successfully")
     return True
 
 
@@ -214,12 +214,12 @@ def test_parallel_skill_execution():
         skill = get_skill(name)
         return skill.execute({"source_code": code})
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
         futures = [executor.submit(run_skill, name) for name in list_skills()]
         results = list(concurrent.futures.as_completed(futures))
 
-    assert len(results) == 6
-    print("  ✓ Parallel skill execution: 6 skills processed")
+    assert len(results) == len(list_skills())
+    print(f"  ✓ Parallel skill execution: {len(results)} skills processed")
     return True
 
 

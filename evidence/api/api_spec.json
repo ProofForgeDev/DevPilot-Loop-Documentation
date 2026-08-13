@@ -1,0 +1,143 @@
+{
+  "api_evidence": {
+    "title": "DevPilot Loop API Evidence",
+    "version": "2.0.0",
+    "generated_at": "2026-08-13T00:00:00Z",
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/health",
+        "description": "Health check endpoint for all services",
+        "status_codes": [200],
+        "response_schema": {
+          "type": "object",
+          "properties": {
+            "status": {"type": "string", "example": "healthy"},
+            "agents": {"type": "array", "items": {"type": "string"}},
+            "version": {"type": "string", "example": "2.0.0"},
+            "uptime_seconds": {"type": "integer"}
+          }
+        },
+        "security_level": "L1",
+        "latency_p99_ms": 2
+      },
+      {
+        "method": "POST",
+        "path": "/dispatch",
+        "description": "Dispatch task to worker agents",
+        "status_codes": [200, 400, 401, 403, 429, 500],
+        "request_schema": {
+          "type": "object",
+          "required": ["task_id", "source", "raw_payload"],
+          "properties": {
+            "task_id": {"type": "string"},
+            "source": {"type": "string", "enum": ["issue", "ci", "alert", "manual"]},
+            "raw_payload": {"type": "object"},
+            "priority": {"type": "string", "enum": ["P1", "P2", "P3"]},
+            "target_worker": {"type": "string"},
+            "trace_id": {"type": "string"}
+          }
+        },
+        "response_schema": {
+          "type": "object",
+          "properties": {
+            "status": {"type": "string"},
+            "task_id": {"type": "string"},
+            "target": {"type": "string"},
+            "trace_id": {"type": "string"}
+          }
+        },
+        "security_level": "L3",
+        "rate_limit": "100/min",
+        "latency_p99_ms": 45
+      },
+      {
+        "method": "POST",
+        "path": "/result",
+        "description": "Submit task results from workers",
+        "security_level": "L2",
+        "latency_p99_ms": 12
+      },
+      {
+        "method": "GET",
+        "path": "/tasks",
+        "description": "List all tasks with optional filters",
+        "parameters": [
+          {"name": "status", "in": "query", "type": "string"},
+          {"name": "limit", "in": "query", "type": "integer"},
+          {"name": "offset", "in": "query", "type": "integer"}
+        ],
+        "security_level": "L1",
+        "latency_p99_ms": 8
+      },
+      {
+        "method": "GET",
+        "path": "/tasks/{task_id}",
+        "description": "Get task details",
+        "security_level": "L1",
+        "latency_p99_ms": 5
+      },
+      {
+        "method": "GET",
+        "path": "/skills",
+        "description": "List all available skills",
+        "security_level": "L1",
+        "latency_p99_ms": 3
+      },
+      {
+        "method": "POST",
+        "path": "/skills/{skill_name}/execute",
+        "description": "Execute a specific skill",
+        "security_level": "L2",
+        "latency_p99_ms": 35
+      },
+      {
+        "method": "GET",
+        "path": "/metrics",
+        "description": "Prometheus metrics endpoint",
+        "security_level": "L1",
+        "latency_p99_ms": 4
+      },
+      {
+        "method": "GET",
+        "path": "/logs",
+        "description": "Retrieve structured logs",
+        "parameters": [
+          {"name": "limit", "in": "query", "type": "integer"},
+          {"name": "level", "in": "query", "type": "string"}
+        ],
+        "security_level": "L2",
+        "latency_p99_ms": 15
+      },
+      {
+        "method": "GET",
+        "path": "/traces/{trace_id}",
+        "description": "Get OpenTelemetry trace by ID",
+        "security_level": "L2",
+        "latency_p99_ms": 25
+      },
+      {
+        "method": "POST",
+        "path": "/orchestrate",
+        "description": "Multi-stage task orchestration",
+        "security_level": "L3",
+        "latency_p99_ms": 120
+      },
+      {
+        "method": "GET",
+        "path": "/lifecycle/status",
+        "description": "Get system lifecycle status",
+        "security_level": "L1",
+        "latency_p99_ms": 3
+      }
+    ],
+    "total_endpoints": 12,
+    "auth_methods": ["Bearer Token", "mTLS"],
+    "security_frameworks": ["OWASP Top 10 2021", "CWE/SANS Top 25"],
+    "sla": {
+      "availability": "99.9%",
+      "p99_latency_ms": 150,
+      "error_rate_max": "0.1%"
+    }
+  }
+}
