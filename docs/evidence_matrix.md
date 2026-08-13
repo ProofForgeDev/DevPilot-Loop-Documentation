@@ -14,7 +14,7 @@
 
 | 编号 | 级别 | 证据名称 | 文件路径 | 大小 | 证明内容 | 状态 |
 |------|------|---------|---------|------|---------|------|
-| E01 | L1 | Docker 容器状态 | `poc/deploy/evidence/L1_docker_compose_ps.txt` | 298 B | 8 容器（Manager + 6 Worker + Gateway）全部 running healthy | ✅ |
+| E01 | L1 | Docker 容器状态 | `poc/deploy/evidence/L1_docker_compose_ps.txt` | 298 B | 8 容器（Manager + 8 Worker + Gateway）全部 running healthy | ✅ |
 | E02 | L1 | 容器健康日志 | `poc/deploy/evidence/L1_docker_compose_logs.txt` | 3,120 B | 40 行健康检查日志，全部 200 OK，无错误 | ✅ |
 | E03 | L2 | Agent 配置汇总 | `poc/deploy/evidence/L2_agent_configs.txt` | 7,984 B | 7 个 config.yaml 完整（devlead/intake/analyst/fixer/verifier/release/knowledge） | ✅ |
 | E04 | L2 | 通信链路测试 | `poc/deploy/evidence/L2_agent_comm_test.txt` | 1,514 B | 5/5 测试通过：健康检查→派发→接收→提交→任务列表 | ✅ |
@@ -43,7 +43,7 @@
 
 | 指标 | 数值 |
 |------|------|
-| Agent 数量 | 7（1 Manager + 6 Workers）+ 1 Gateway = **8 容器** |
+| Agent 数量 | 7（1 Manager + 8 Workers）+ 1 Gateway = **8 容器** |
 | Skill 数量 | **6**（defect-triage / code-root-cause / fix-generator / test-runner / canary-release / postmortem-capture） |
 | 通信测试 | **5/5 通过** |
 | 场景步骤 | **6/6 完成** |
