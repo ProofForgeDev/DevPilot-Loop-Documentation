@@ -1,0 +1,19 @@
+{
+  "id": "GC-001",
+  "scenario": "NPE in authentication handler",
+  "input": {
+    "code": "def login(username, password):\n    user = get_user(username)\n    return user.email  # NPE if user is None",
+    "expected_issues": [
+      "null_pointer",
+      "missing_validation"
+    ],
+    "expected_severity": "HIGH"
+  },
+  "expected_output": {
+    "status": "ok",
+    "issues_found": 2,
+    "fixes_generated": 1,
+    "confidence": 0.95
+  },
+  "actual_result": "pass"
+}

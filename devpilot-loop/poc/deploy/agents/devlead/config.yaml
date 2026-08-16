@@ -1,0 +1,55 @@
+# ============================================================
+# DevPilot Loop — Manager Agent 配置（DevLead）
+# ============================================================
+# Agent 类型: manager
+# 职责: 任务拆解、派发、进度追踪、升级决策
+# 对应文档: docs/03-agents.md § Agent 1
+# ============================================================
+
+agent:
+  name: devlead
+  type: manager
+  description: 研发总监，全局编排者。负责接收外部任务、拆解子任务、派发 Worker、追踪进度、决策升级。
+
+model:
+  provider: openai-compatible
+  endpoint: http://higress:8080/v1/chat/completions
+  model_name: qwen-max
+  temperature: 0.3
+  max_tokens: 2048
+
+skills: []  # Manager 不挂载 Skill，保持纯编排
+
+tools:
+  - name: agent_api
+    type: mcp
+    endpoint: http://manager:8008
+    permissions:
+      - read:agent_status
+      - read:worker_health
+  - name: matrix_client
+    type: mcp
+    endpoint: http://synapse:8008
+    permissions:
+      - read:room_messages
+      - write:room_messages
+
+concurrency:
+  max_parallel_workers: 6
+  max_concurrent_tasks: 3
+  task_timeout_seconds: 60
+
+escalation:
+  max_retry_count: 3
+  retry_backoff: [5, 15, 30]  # 秒
+  timeout_threshold_seconds: 60
+  human_approval_required:
+    - level: L3
+      actions: ["push_main", "deploy_production"]
+    - level: L2
+      actions: ["generate_patch"]
+
+outbound:
+  matrix_room: "#devpilot-loop:devpilot.local"
+  log_dir: /data/logs
+  trace_export: otel

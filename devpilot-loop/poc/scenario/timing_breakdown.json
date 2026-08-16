@@ -1,0 +1,30 @@
+{
+  "overall_elapsed_sec": 0.0008718967437744141,
+  "steps": [
+    {
+      "step": "intake",
+      "elapsed_sec": 0.0001609325408935547
+    },
+    {
+      "step": "analyst",
+      "elapsed_sec": 9.822845458984375e-05
+    },
+    {
+      "step": "fixer",
+      "elapsed_sec": 0.0003108978271484375
+    },
+    {
+      "step": "verifier",
+      "elapsed_sec": 9.703636169433594e-05
+    },
+    {
+      "step": "release",
+      "elapsed_sec": 9.894371032714844e-05
+    },
+    {
+      "step": "knowledge",
+      "elapsed_sec": 7.891654968261719e-05
+    }
+  ],
+  "completed_at": "2026-08-12T15:07:21.778113+00:00"
+}

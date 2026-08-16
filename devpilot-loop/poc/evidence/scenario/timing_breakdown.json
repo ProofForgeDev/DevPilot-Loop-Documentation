@@ -1,0 +1,37 @@
+{
+  "scenario": "flask_login_module_security_review",
+  "started_at": "2026-08-16T14:53:16.750215+00:00",
+  "overall_elapsed_sec": 0.0064237117767333984,
+  "steps": [
+    {
+      "step": "intake",
+      "elapsed_sec": 0.0013031959533691406,
+      "status": "ok"
+    },
+    {
+      "step": "analyst",
+      "elapsed_sec": 0.0009670257568359375,
+      "status": "ok"
+    },
+    {
+      "step": "fixer",
+      "elapsed_sec": 0.0018029212951660156,
+      "status": "ok"
+    },
+    {
+      "step": "verifier",
+      "elapsed_sec": 0.0007762908935546875,
+      "status": "ok"
+    },
+    {
+      "step": "release",
+      "elapsed_sec": 0.0010437965393066406,
+      "status": "ok"
+    },
+    {
+      "step": "knowledge",
+      "elapsed_sec": 0.0005266666412353516,
+      "status": "ok"
+    }
+  ]
+}

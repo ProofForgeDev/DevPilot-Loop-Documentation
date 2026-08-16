@@ -1,0 +1,1 @@
+DevPilot Loop 是基于 AgentTeams 的多 Agent 自主闭环系统，面向 3-20 人研发团队。DevLead Manager + 8 Worker（Intake/Analyst/Fixer/Verifier/Release/Knowledge/Orchestrator/Lifecycle）协同，将缺陷修复周期从 4h 缩短至 15min，人工介入减少 80%，复发率下降 60%。全流程由 8 个 Skill 驱动，在可审计 Matrix 房间中完成，支持运维自愈、智能客服等场景迁移。Apache 2.0 开源，目标成为 AgentTeams 研发场景官方参考实现。

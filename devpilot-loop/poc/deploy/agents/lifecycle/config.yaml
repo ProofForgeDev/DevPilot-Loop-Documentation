@@ -1,0 +1,45 @@
+# ============================================================
+# DevPilot Loop — Worker Agent 配置（Lifecycle）
+# ============================================================
+# Agent 类型: worker
+# 职责: 服务生命周期管理——启动、检查点、恢复、优雅退出
+# 对应文档: docs/03-agents.md § Agent 9
+# ============================================================
+
+agent:
+  name: lifecycle
+  type: worker
+  description: 生命周期管家。负责服务启动、检查点保存、状态恢复、优雅关闭、重启管理。
+  
+model:
+  provider: openai-compatible
+  endpoint: http://higress:8080/v1/chat/completions
+  model_name: qwen-turbo
+  temperature: 0.0
+  max_tokens: 256
+
+skills:
+  - name: lifecycle
+    version: "2.0.0"
+    path: ../../skills/lifecycle
+
+tools:
+  - name: state_store
+    type: file
+    path: /data/state/lifecycle_state.json
+    permissions:
+      - read:state
+      - write:checkpoint
+
+concurrency:
+  max_concurrent_tasks: 1
+  task_timeout_seconds: 10
+
+escalation:
+  max_retry_count: 2
+  retry_backoff: [1, 3]
+
+outbound:
+  matrix_room: "#devpilot-loop:devpilot.local"
+  log_dir: /data/logs
+  state_file: /data/state/lifecycle_state.json

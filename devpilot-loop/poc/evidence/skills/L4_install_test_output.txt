@@ -1,0 +1,2000 @@
+============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:06Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:07Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:07Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:08Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:08Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:09Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:09Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:09Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:10Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:10Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:11Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:11Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:11Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:12Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:12Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:13Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:13Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:14Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:14Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:14Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:15Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:15Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:16Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:16Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:16Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:17Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:17Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:18Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:18Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:19Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:19Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:19Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:20Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:20Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:21Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:21Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:22Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:22Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:22Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:23Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:23Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:24Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:24Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:25Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:25Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:26Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:26Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:26Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:27Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:28Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:28Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:28Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:29Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:29Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:30Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:30Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:31Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:31Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:32Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:32Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6
+      found: code-review v1.0.0
+      found: deploy-verification v1.0.0
+      found: doc-writing v1.0.0
+      found: perf-analysis v1.0.0
+      found: security-scan v1.0.0
+      found: test-generation v1.0.0
+    registry OK
+【Part 3】Pytest 测试套件
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- DevPilot_Loop_Preliminary/devpilot-loop/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: DevPilot_Loop_Preliminary/devpilot-loop/skills
+configfile: pyproject.toml
+[1mcollecting ... [0m============================================================
+  DevPilot Loop — Skill 安装验证
+  时间: 2026-08-12T16:09:32Z
+============================================================
+【Part 1】各 Skill execute() 测试
+── code-review ──
+  ✓ execute OK — name=code-review status=ok
+── test-generation ──
+  ✓ execute OK — name=test-generation status=ok
+── doc-writing ──
+  ✓ execute OK — name=doc-writing status=ok
+── security-scan ──
+  ✓ execute OK — name=security-scan status=ok
+── perf-analysis ──
+  ✓ execute OK — name=perf-analysis status=ok
+── deploy-verification ──
+  ✓ execute OK — name=deploy-verification status=ok
+【Part 2】Registry 注册中心
+  ✓ Registry 发现全部 6 个 Skill
+    registry count: 6

@@ -1,0 +1,2 @@
+time="2026-08-12T19:47:27+08:00" level=warning msg="DevPilot_Loop_Preliminary/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+services.proof-verifier.volumes[1]: target /output already mounted as services.proof-verifier.tmpfs[2]

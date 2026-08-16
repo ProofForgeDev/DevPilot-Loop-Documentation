@@ -1,0 +1,285 @@
+# ============================================================
+# DevPilot Loop — HiClaw 兼容运行时（PoC 本地验证）
+# ============================================================
+# 基于 python:3.11-slim 的最小化 HiClaw 兼容框架
+# 真实环境请替换为 agentscope-ai/AgentTeams 官方部署
+# 参考: https://github.com/agentscope-ai/AgentTeams
+#
+# DAL 等级: DAL-2（当前实现级别）
+# 总服务数: 8（1 Manager + 1 Gateway + 6 Worker）
+# ============================================================
+
+services:
+  # ---- HiClaw Gateway（代理所有 Agent 间通信）----
+  gateway:
+    image: python:3.11-slim
+    container_name: devpilot-gateway
+    working_dir: /app
+    volumes:
+      - ./runtime:/app:ro
+    command: >
+      sh -c "pip install fastapi uvicorn httpx pyyaml -q &&
+             python -m uvicorn agent_runtime:app --host 0.0.0.0 --port 8080
+             --factory agent_runtime:create_agent"
+    environment:
+      AGENT_NAME: gateway
+      AGENT_TYPE: gateway
+      SKILL_NAME: ""
+    ports:
+      - "8080:8080"
+    networks:
+      - devpilot-network
+    restart: unless-stopped
+
+  # ---- Manager Agent（DevLead）----
+  manager:
+    build:
+      context: ..
+      dockerfile: deploy/runtime/Dockerfile
+    image: devpilot/manager:latest
+    container_name: devpilot-manager
+    ports:
+      - "8008:8001"
+    volumes:
+      - ./agents/devlead:/app/agent:ro
+    environment:
+      AGENT_NAME: devlead
+      AGENT_TYPE: manager
+      SKILL_NAME: ""
+      MANAGER_URL: http://manager:8001
+    networks:
+      - devpilot-network
+    depends_on:
+      - gateway
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # ---- Worker: Intake（缺陷归并）----
+  worker-intake:
+    build:
+      context: ..
+      dockerfile: deploy/runtime/Dockerfile
+    image: devpilot/worker:latest
+    container_name: devpilot-worker-intake
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./agents/intake:/app/agent:ro
+    environment:
+      AGENT_NAME: intake
+      AGENT_TYPE: worker
+      SKILL_NAME: defect-triage
+      MANAGER_URL: http://manager:8008
+    networks:
+      - devpilot-network
+    depends_on:
+      - manager
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # ---- Worker: Analyst（根因定位）----
+  worker-analyst:
+    build:
+      context: ..
+      dockerfile: deploy/runtime/Dockerfile
+    image: devpilot/worker:latest
+    container_name: devpilot-worker-analyst
+    ports:
+      - "8002:8001"
+    volumes:
+      - ./agents/analyst:/app/agent:ro
+    environment:
+      AGENT_NAME: analyst
+      AGENT_TYPE: worker
+      SKILL_NAME: code-root-cause
+      MANAGER_URL: http://manager:8008
+    networks:
+      - devpilot-network
+    depends_on:
+      - manager
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # ---- Worker: Fixer（修复执行）----
+  worker-fixer:
+    build:
+      context: ..
+      dockerfile: deploy/runtime/Dockerfile
+    image: devpilot/worker:latest
+    container_name: devpilot-worker-fixer
+    ports:
+      - "8003:8001"
+    volumes:
+      - ./agents/fixer:/app/agent:ro
+    environment:
+      AGENT_NAME: fixer
+      AGENT_TYPE: worker
+      SKILL_NAME: fix-generator
+      MANAGER_URL: http://manager:8008
+    networks:
+      - devpilot-network
+    depends_on:
+      - manager
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # ---- Worker: Verifier（测试验证）----
+  worker-verifier:
+    build:
+      context: ..
+      dockerfile: deploy/runtime/Dockerfile
+    image: devpilot/worker:latest
+    container_name: devpilot-worker-verifier
+    ports:
+      - "8004:8001"
+    volumes:
+      - ./agents/verifier:/app/agent:ro
+    environment:
+      AGENT_NAME: verifier
+      AGENT_TYPE: worker
+      SKILL_NAME: test-runner
+      MANAGER_URL: http://manager:8008
+    networks:
+      - devpilot-network
+    depends_on:
+      - manager
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # ---- Worker: Release（灰度发布）----
+  worker-release:
+    build:
+      context: ..
+      dockerfile: deploy/runtime/Dockerfile
+    image: devpilot/worker:latest
+    container_name: devpilot-worker-release
+    ports:
+      - "8005:8001"
+    volumes:
+      - ./agents/release:/app/agent:ro
+    environment:
+      AGENT_NAME: release
+      AGENT_TYPE: worker
+      SKILL_NAME: canary-release
+      MANAGER_URL: http://manager:8008
+    networks:
+      - devpilot-network
+    depends_on:
+      - manager
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # ---- Worker: Knowledge（知识沉淀）----
+  worker-knowledge:
+    build:
+      context: ..
+      dockerfile: deploy/runtime/Dockerfile
+    image: devpilot/worker:latest
+    container_name: devpilot-worker-knowledge
+    ports:
+      - "8006:8001"
+    volumes:
+      - ./agents/knowledge:/app/agent:ro
+    environment:
+      AGENT_NAME: knowledge
+      AGENT_TYPE: worker
+      SKILL_NAME: postmortem-capture
+      MANAGER_URL: http://manager:8008
+    networks:
+      - devpilot-network
+    depends_on:
+      - manager
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+networks:
+  devpilot-network:
+    driver: bridge
+    name: devpilot-network
+
+  # ---- Worker: Orchestrator（任务编排）----
+  worker-orchestrator:
+    build:
+      context: ..
+      dockerfile: deploy/runtime/Dockerfile
+    image: devpilot/worker:latest
+    container_name: devpilot-worker-orchestrator
+    ports:
+      - "8007:8001"
+    volumes:
+      - ./agents/orchestrator:/app/agent:ro
+    environment:
+      AGENT_NAME: orchestrator
+      AGENT_TYPE: worker
+      SKILL_NAME: orchestrator
+      MANAGER_URL: http://manager:8008
+    networks:
+      - devpilot-network
+    depends_on:
+      - manager
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # ---- Worker: Lifecycle（生命周期管理）----
+  worker-lifecycle:
+    build:
+      context: ..
+      dockerfile: deploy/runtime/Dockerfile
+    image: devpilot/worker:latest
+    container_name: devpilot-worker-lifecycle
+    ports:
+      - "8009:8001"
+    volumes:
+      - ./agents/lifecycle:/app/agent:ro
+      - lifecycle_state:/data/state
+    environment:
+      AGENT_NAME: lifecycle
+      AGENT_TYPE: worker
+      SKILL_NAME: lifecycle
+      MANAGER_URL: http://manager:8008
+    networks:
+      - devpilot-network
+    depends_on:
+      - manager
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  lifecycle_state:
+    driver: local

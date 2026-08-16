@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "devpilot-skill"
+version = "1.0.0"
+description = "DevPilot Loop Skill module"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["*"]

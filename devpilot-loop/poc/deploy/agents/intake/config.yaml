@@ -1,0 +1,49 @@
+# ============================================================
+# DevPilot Loop — Worker Agent 配置（Intake）
+# ============================================================
+# Agent 类型: worker
+# 职责: 缺陷归并与分诊，结构化原始报障
+# 对应文档: docs/03-agents.md § Agent 2
+# ============================================================
+
+agent:
+  name: intake
+  type: worker
+  description: 缺陷归并与分诊员。接收原始报障、归并去重、结构化为缺陷单、判定优先级。
+
+model:
+  provider: openai-compatible
+  endpoint: http://higress:8080/v1/chat/completions
+  model_name: qwen-max
+  temperature: 0.2
+  max_tokens: 1024
+
+skills:
+  - name: defect-triage
+    version: "2.0.0"
+    path: ../../poc/skills/defect-triage
+
+tools:
+  - name: issue_tracker
+    type: mcp
+    endpoint: http://higress:8080/mcp/issue-tracker
+    permissions:
+      - read:issue-tracker
+  - name: llm_gateway
+    type: mcp
+    endpoint: http://higress:8080/mcp/llm
+    permissions:
+      - use:llm
+
+concurrency:
+  max_concurrent_tasks: 2
+  task_timeout_seconds: 30
+
+escalation:
+  max_retry_count: 3
+  retry_backoff: [5, 15, 30]
+  confidence_threshold: 0.6  # triage_confidence < 0.6 → 上报人工分诊
+
+outbound:
+  matrix_room: "#devpilot-loop:devpilot.local"
+  log_dir: /data/logs

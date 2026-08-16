@@ -1,0 +1,13 @@
+{
+  "id": "E-GH-001",
+  "type": "repository",
+  "name": "DevPilot-Loop-Preliminary",
+  "owner": "ProofForgeDev",
+  "url": "https://github.com/ProofForgeDev/DevPilot-Loop-Preliminary",
+  "private": false,
+  "license": "Apache-2.0",
+  "language": "Python",
+  "created_at": "2026-08-12",
+  "updated_at": "2026-08-16",
+  "description": "Multi-Agent Software Development Collaboration Platform based on AgentTeams"
+}

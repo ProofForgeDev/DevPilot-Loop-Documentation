@@ -1,0 +1,294 @@
+# ============================================================
+# DevPilot Loop — Worker Agent 配置（Intake）
+# ============================================================
+# Agent 类型: worker
+# 职责: 缺陷归并与分诊，结构化原始报障
+# 对应文档: docs/03-agents.md § Agent 2
+# ============================================================
+
+agent:
+  name: intake
+  type: worker
+  description: 缺陷归并与分诊员。接收原始报障、归并去重、结构化为缺陷单、判定优先级。
+
+model:
+  provider: openai-compatible
+  endpoint: http://higress:8080/v1/chat/completions
+  model_name: qwen-max
+  temperature: 0.2
+  max_tokens: 1024
+
+skills:
+  - name: defect-triage
+    version: "0.1.0"
+    path: ../../poc/skills/defect-triage
+
+tools:
+  - name: issue_tracker
+    type: mcp
+    endpoint: http://higress:8080/mcp/issue-tracker
+    permissions:
+      - read:issue-tracker
+  - name: llm_gateway
+    type: mcp
+    endpoint: http://higress:8080/mcp/llm
+    permissions:
+      - use:llm
+
+concurrency:
+  max_concurrent_tasks: 2
+  task_timeout_seconds: 30
+
+escalation:
+  max_retry_count: 3
+  retry_backoff: [5, 15, 30]
+  confidence_threshold: 0.6  # triage_confidence < 0.6 → 上报人工分诊
+
+outbound:
+  matrix_room: "#devpilot-loop:devpilot.local"
+  log_dir: /data/logs
+# ============================================================
+# DevPilot Loop — Worker Agent 配置（Analyst）
+# ============================================================
+# Agent 类型: worker
+# 职责: 代码根因定位，输出证据链与影响范围
+# 对应文档: docs/03-agents.md § Agent 3
+# ============================================================
+
+agent:
+  name: analyst
+  type: worker
+  description: 代码根因定位专家。分析缺陷单、定位代码根因、输出证据链与影响范围。
+
+model:
+  provider: openai-compatible
+  endpoint: http://higress:8080/v1/chat/completions
+  model_name: qwen-max
+  temperature: 0.1
+  max_tokens: 2048
+
+skills:
+  - name: code-root-cause
+    version: "0.1.0"
+    path: ../../poc/skills/code-root-cause
+
+tools:
+  - name: git_api
+    type: mcp
+    endpoint: http://higress:8080/mcp/git
+    permissions:
+      - read:git-repo
+  - name: llm_gateway
+    type: mcp
+    endpoint: http://higress:8080/mcp/llm
+    permissions:
+      - use:llm
+
+concurrency:
+  max_concurrent_tasks: 1
+  task_timeout_seconds: 60
+
+escalation:
+  max_retry_count: 3
+  search_expansion_commits: 50  # 扩大搜索最近 50 commits
+  confidence_threshold: 0.7    # root_cause confidence < 0.7 → 上报人工辅助
+
+outbound:
+  matrix_room: "#devpilot-loop:devpilot.local"
+  log_dir: /data/logs
+# ============================================================
+# DevPilot Loop — Worker Agent 配置（Fixer）
+# ============================================================
+# Agent 类型: worker
+# 职责: 生成修复 patch，创建回滚点
+# 对应文档: docs/03-agents.md § Agent 4
+# ============================================================
+
+agent:
+  name: fixer
+  type: worker
+  description: 修复执行工程师。根据根因生成修复方案、产出 patch、创建回滚点。
+
+model:
+  provider: openai-compatible
+  endpoint: http://higress:8080/v1/chat/completions
+  model_name: qwen-max
+  temperature: 0.1
+  max_tokens: 4096
+
+skills:
+  - name: fix-generator
+    version: "0.1.0"
+    path: ../../poc/skills/fix-generator
+
+tools:
+  - name: git_api
+    type: mcp
+    endpoint: http://higress:8080/mcp/git
+    permissions:
+      - write:git-branch
+      - write:git-tag
+  - name: llm_gateway
+    type: mcp
+    endpoint: http://higress:8080/mcp/llm
+    permissions:
+      - use:llm
+
+concurrency:
+  max_concurrent_tasks: 1
+  task_timeout_seconds: 60
+
+escalation:
+  max_retry_count: 3
+  human_approval_required: true  # L2 写操作需 Manager 确认
+  production_approval_required: true  # L3 push 主干需人工审批
+
+outbound:
+  matrix_room: "#devpilot-loop:devpilot.local"
+  log_dir: /data/logs
+# ============================================================
+# DevPilot Loop — Worker Agent 配置（Verifier）
+# ============================================================
+# Agent 类型: worker
+# 职责: 沙箱环境执行测试，输出测试报告与通过/驳回判定
+# 对应文档: docs/03-agents.md § Agent 5
+# ============================================================
+
+agent:
+  name: verifier
+  type: worker
+  description: 测试验证工程师。在沙箱环境执行测试、运行回归测试、输出测试报告。
+
+model:
+  provider: openai-compatible
+  endpoint: http://higress:8080/v1/chat/completions
+  model_name: qwen-haiku
+  temperature: 0.0
+  max_tokens: 512
+
+skills:
+  - name: test-runner
+    version: "0.1.0"
+    path: ../../poc/skills/test-runner
+
+tools:
+  - name: ci_api
+    type: mcp
+    endpoint: http://higress:8080/mcp/ci
+    permissions:
+      - execute:sandbox
+  - name: llm_gateway
+    type: mcp
+    endpoint: http://higress:8080/mcp/llm
+    permissions:
+      - use:llm
+
+concurrency:
+  max_concurrent_tasks: 1
+  task_timeout_seconds: 300  # 5 分钟测试超时
+
+escalation:
+  max_retry_count: 1  # 重试 1 次后降级人工
+  timeout_seconds: 300
+  consecutive_fail_threshold: 2  # 连续 2 次 fail → 上报 DevLead
+
+outbound:
+  matrix_room: "#devpilot-loop:devpilot.local"
+  log_dir: /data/logs
+# ============================================================
+# DevPilot Loop — Worker Agent 配置（Release）
+# ============================================================
+# Agent 类型: worker
+# 职责: 灰度发布、监控灰度指标、做发布/回滚决策
+# 对应文档: docs/03-agents.md § Agent 6
+# ============================================================
+
+agent:
+  name: release
+  type: worker
+  description: 灰度发布工程师。执行灰度发布、监控灰度指标、做发布/回滚决策。
+
+model:
+  provider: openai-compatible
+  endpoint: http://higress:8080/v1/chat/completions
+  model_name: qwen-max
+  temperature: 0.1
+  max_tokens: 1024
+
+skills:
+  - name: canary-release
+    version: "0.1.0"
+    path: ../../poc/skills/canary-release
+
+tools:
+  - name: k8s_api
+    type: mcp
+    endpoint: http://higress:8080/mcp/k8s
+    permissions:
+      - write:k8s-deploy
+      - read:monitoring
+  - name: monitoring_api
+    type: mcp
+    endpoint: http://higress:8080/mcp/monitoring
+    permissions:
+      - read:monitoring
+
+concurrency:
+  max_concurrent_tasks: 1
+  task_timeout_seconds: 120
+
+escalation:
+  human_approval_required: true  # 所有 L3 生产操作需人工审批
+  auto_rollback_threshold: 0.05  # error_rate_delta > 5% → 自动回滚
+
+outbound:
+  matrix_room: "#devpilot-loop:devpilot.local"
+  log_dir: /data/logs
+# ============================================================
+# DevPilot Loop — Worker Agent 配置（Knowledge）
+# ============================================================
+# Agent 类型: worker
+# 职责: 汇总全流程 trace，生成复盘报告，沉淀 Runbook
+# 对应文档: docs/03-agents.md § Agent 7
+# ============================================================
+
+agent:
+  name: knowledge
+  type: worker
+  description: 知识沉淀工程师。汇总全流程 trace、生成复盘报告、沉淀 Runbook 与 Skill 模板。
+
+model:
+  provider: openai-compatible
+  endpoint: http://higress:8080/v1/chat/completions
+  model_name: qwen-max
+  temperature: 0.2
+  max_tokens: 2048
+
+skills:
+  - name: postmortem-capture
+    version: "0.1.0"
+    path: ../../poc/skills/postmortem-capture
+
+tools:
+  - name: knowledge_base
+    type: mcp
+    endpoint: http://higress:8080/mcp/wiki
+    permissions:
+      - write:knowledge-base
+  - name: llm_gateway
+    type: mcp
+    endpoint: http://higress:8080/mcp/llm
+    permissions:
+      - use:llm
+
+concurrency:
+  max_concurrent_tasks: 1
+  task_timeout_seconds: 30
+
+escalation:
+  max_retry_count: 3
+  systematic_issue_threshold: 3  # 同类缺陷 ≥3 次 → 上报流程改进建议
+
+outbound:
+  matrix_room: "#devpilot-loop:devpilot.local"
+  log_dir: /data/logs

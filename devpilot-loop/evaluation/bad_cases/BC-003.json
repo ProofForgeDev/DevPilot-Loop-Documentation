@@ -1,0 +1,9 @@
+{
+  "id": "BC-003",
+  "scenario": "Malformed JSON input",
+  "input": {
+    "raw_payload": "{invalid json"
+  },
+  "expected": "should return validation error",
+  "actual": "pass"
+}

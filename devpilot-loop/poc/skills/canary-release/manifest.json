@@ -1,0 +1,46 @@
+{
+  "name": "canary-release",
+  "version": "2.0.0",
+  "description": "执行灰度发布、监控灰度指标、做发布/回滚决策",
+  "entry": "main",
+  "permissions": [
+    "write:k8s-deploy",
+    "read:monitoring"
+  ],
+  "dependencies": [
+    {
+      "name": "k8s-api-mcp",
+      "type": "mcp"
+    },
+    {
+      "name": "monitoring-api-mcp",
+      "type": "mcp"
+    }
+  ],
+  "author": "DevPilot Loop Contributors",
+  "license": "Apache-2.0",
+  "tags": [
+    "release",
+    "canary",
+    "deployment"
+  ],
+  "failure_policy": {
+    "max_retries": 3,
+    "retry_backoff": "exponential",
+    "timeout_seconds": 120,
+    "fallback_action": "escalate_to_devlead",
+    "on_failure_notify": [
+      "devlead",
+      "knowledge"
+    ]
+  },
+  "security_boundary": {
+    "required_permissions": [
+      "write:k8s-deploy",
+      "read:monitoring"
+    ],
+    "forbidden_actions": [],
+    "data_classification": "restricted"
+  },
+  "reuse_value": "可被多个 Agent 复用；可独立安装为 Python 包"
+}

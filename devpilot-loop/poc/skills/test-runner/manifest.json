@@ -1,0 +1,46 @@
+{
+  "name": "test-runner",
+  "version": "2.0.0",
+  "description": "在沙箱环境执行单元测试与回归测试，输出测试报告",
+  "entry": "main",
+  "permissions": [
+    "execute:sandbox"
+  ],
+  "dependencies": [
+    {
+      "name": "ci-api-mcp",
+      "type": "mcp"
+    },
+    {
+      "name": "llm-gateway",
+      "type": "mcp"
+    }
+  ],
+  "author": "DevPilot Loop Contributors",
+  "license": "Apache-2.0",
+  "tags": [
+    "test",
+    "verification",
+    "sandbox"
+  ],
+  "failure_policy": {
+    "max_retries": 3,
+    "retry_backoff": "exponential",
+    "timeout_seconds": 120,
+    "fallback_action": "escalate_to_devlead",
+    "on_failure_notify": [
+      "devlead",
+      "knowledge"
+    ]
+  },
+  "security_boundary": {
+    "required_permissions": [
+      "execute:sandbox"
+    ],
+    "forbidden_actions": [
+      "write:git-repo"
+    ],
+    "data_classification": "internal"
+  },
+  "reuse_value": "可被多个 Agent 复用；可独立安装为 Python 包"
+}

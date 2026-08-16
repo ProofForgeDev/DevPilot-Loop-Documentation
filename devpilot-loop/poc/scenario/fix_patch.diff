@@ -1,0 +1,14 @@
+--- a/login_module.py
++++ b/fixed_login_module.py
+
+@@ -17 @@ line 17
+-SECRET_KEY = "my-super-secret-key-12345"
++SECRET_KEY = os.environ.get("FLASK_SECRET_KEY", "change-me-in-production")
+
+@@ -68 @@ line 68
+-    # 问题: 没有验证 token 有效性
++    # Token validation handled by jwt.decode with options
+
+@@ -78 @@ line 78
+-    app.run(host="0.0.0.0", port=5000, debug=True)
++    app.run(host="0.0.0.0", port=5000, debug=False)

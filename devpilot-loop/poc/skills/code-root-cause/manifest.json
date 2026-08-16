@@ -1,0 +1,46 @@
+{
+  "name": "code-root-cause",
+  "version": "2.0.0",
+  "description": "根据结构化缺陷单定位代码根因，输出证据链与影响范围",
+  "entry": "main",
+  "permissions": [
+    "read:git-repo"
+  ],
+  "dependencies": [
+    {
+      "name": "llm-gateway",
+      "type": "mcp"
+    },
+    {
+      "name": "git-api-mcp",
+      "type": "mcp"
+    }
+  ],
+  "author": "DevPilot Loop Contributors",
+  "license": "Apache-2.0",
+  "tags": [
+    "root-cause",
+    "analysis",
+    "code"
+  ],
+  "failure_policy": {
+    "max_retries": 3,
+    "retry_backoff": "exponential",
+    "timeout_seconds": 120,
+    "fallback_action": "escalate_to_devlead",
+    "on_failure_notify": [
+      "devlead",
+      "knowledge"
+    ]
+  },
+  "security_boundary": {
+    "required_permissions": [
+      "read:git-repo"
+    ],
+    "forbidden_actions": [
+      "write:git-repo"
+    ],
+    "data_classification": "internal"
+  },
+  "reuse_value": "可被多个 Agent 复用；可独立安装为 Python 包"
+}

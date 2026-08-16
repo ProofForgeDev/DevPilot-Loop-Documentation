@@ -1,0 +1,11 @@
+{
+  "id": "E-LLM-001",
+  "type": "api_call",
+  "timestamp": "2026-08-16T14:30:50.114161+00:00",
+  "provider": "openrouter.ai",
+  "model": "qwen/qwen3.8-27b",
+  "status": "failed_402",
+  "error": "Payment Required - API key invalid or expired",
+  "fallback": "rule_engine",
+  "recommendation": "For semi-final: obtain valid API key from OpenRouter or switch to local Ollama"
+}

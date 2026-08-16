@@ -1,0 +1,48 @@
+{
+  "name": "fix-generator",
+  "version": "2.0.0",
+  "description": "根据根因分析结果生成修复方案与代码 patch，创建回滚点",
+  "entry": "main",
+  "permissions": [
+    "write:git-branch",
+    "write:git-tag"
+  ],
+  "dependencies": [
+    {
+      "name": "llm-gateway",
+      "type": "mcp"
+    },
+    {
+      "name": "git-api-mcp",
+      "type": "mcp"
+    }
+  ],
+  "author": "DevPilot Loop Contributors",
+  "license": "Apache-2.0",
+  "tags": [
+    "fix",
+    "patch",
+    "code-generation"
+  ],
+  "failure_policy": {
+    "max_retries": 3,
+    "retry_backoff": "exponential",
+    "timeout_seconds": 120,
+    "fallback_action": "escalate_to_devlead",
+    "on_failure_notify": [
+      "devlead",
+      "knowledge"
+    ]
+  },
+  "security_boundary": {
+    "required_permissions": [
+      "write:git-branch",
+      "write:git-tag"
+    ],
+    "forbidden_actions": [
+      "deploy:execute"
+    ],
+    "data_classification": "internal"
+  },
+  "reuse_value": "可被多个 Agent 复用；可独立安装为 Python 包"
+}

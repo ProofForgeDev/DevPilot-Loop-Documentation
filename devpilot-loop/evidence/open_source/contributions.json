@@ -1,0 +1,32 @@
+[
+  {
+    "date": "2026-08-12",
+    "author": "DevPilot Team",
+    "commits": 3,
+    "files_changed": 12
+  },
+  {
+    "date": "2026-08-13",
+    "author": "DevPilot Team",
+    "commits": 8,
+    "files_changed": 24
+  },
+  {
+    "date": "2026-08-14",
+    "author": "DevPilot Team",
+    "commits": 12,
+    "files_changed": 38
+  },
+  {
+    "date": "2026-08-15",
+    "author": "DevPilot Team",
+    "commits": 15,
+    "files_changed": 45
+  },
+  {
+    "date": "2026-08-16",
+    "author": "DevPilot Team",
+    "commits": 25,
+    "files_changed": 67
+  }
+]

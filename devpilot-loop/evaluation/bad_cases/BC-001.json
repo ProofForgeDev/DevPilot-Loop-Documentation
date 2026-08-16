@@ -1,0 +1,9 @@
+{
+  "id": "BC-001",
+  "scenario": "Empty input handling",
+  "input": {
+    "source_code": ""
+  },
+  "expected": "should return empty results, not crash",
+  "actual": "pass"
+}

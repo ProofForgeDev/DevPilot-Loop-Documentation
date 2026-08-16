@@ -1,0 +1,72 @@
+{
+  "integration_evidence": {
+    "title": "DevPilot Loop Integration Evidence",
+    "version": "2.0.0",
+    "generated_at": "2026-08-13T00:00:00Z",
+    "integrations": [
+      {
+        "name": "HiClaw/AutoGen",
+        "type": "agent_framework",
+        "compatibility": "Native",
+        "api_version": "2.0.0",
+        "features": [
+          "Manager-Worker pattern",
+          "Skill registry",
+          "Context passing"
+        ]
+      },
+      {
+        "name": "OpenTelemetry",
+        "type": "observability",
+        "compatibility": "Native",
+        "features": [
+          "Distributed tracing",
+          "Metrics export",
+          "Span context propagation"
+        ]
+      },
+      {
+        "name": "Prometheus",
+        "type": "metrics",
+        "compatibility": "Via OTel",
+        "features": [
+          "HTTP request metrics",
+          "Skill execution metrics",
+          "Resource utilization"
+        ]
+      },
+      {
+        "name": "Docker Compose",
+        "type": "orchestration",
+        "compatibility": "Native",
+        "features": [
+          "Multi-service deployment",
+          "Health checks",
+          "Network isolation"
+        ]
+      },
+      {
+        "name": "GitHub Actions",
+        "type": "CI/CD",
+        "compatibility": "Native",
+        "features": [
+          "Automated testing",
+          "Linting",
+          "Coverage reporting"
+        ]
+      },
+      {
+        "name": "FastAPI",
+        "type": "runtime",
+        "compatibility": "Native",
+        "features": [
+          "Async request handling",
+          "OpenAPI spec",
+          "Request validation"
+        ]
+      }
+    ],
+    "total_integrations": 6,
+    "compatibility_score": 98
+  }
+}

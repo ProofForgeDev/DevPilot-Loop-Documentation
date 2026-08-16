@@ -1,0 +1,30 @@
+# Code Owners for DevPilot Loop
+# Each owner is responsible for review and maintenance of their assigned areas
+
+# Core Framework
+/devpilot-loop/skills/base.py @devpilot-team
+/devpilot-loop/skills/registry.py @devpilot-team
+/devpilot-loop/poc/deploy/runtime/ @devpilot-team
+
+# Skills
+/devpilot-loop/skills/code_review/ @code-review-lead
+/devpilot-loop/skills/deploy_verification/ @deploy-lead
+/devpilot-loop/skills/doc_writing/ @docs-lead
+/devpilot-loop/skills/lifecycle/ @lifecycle-lead
+/devpilot-loop/skills/orchestrator/ @orchestrator-lead
+/devpilot-loop/skills/perf_analysis/ @perf-lead
+/devpilot-loop/skills/security_scan/ @security-lead
+/devpilot-loop/skills/test_generation/ @testing-lead
+
+# Documentation
+/docs/ @docs-team
+/README.md @docs-team
+/CONTRIBUTING.md @docs-team
+
+# Tests
+/tests/ @testing-team
+/devpilot-loop/tests/ @testing-team
+
+# Security
+/devpilot-loop/poc/security/ @security-team
+/open-agent-audit/ @security-team

@@ -1,0 +1,49 @@
+# ============================================================
+# DevPilot Loop — Worker Agent 配置（Release）
+# ============================================================
+# Agent 类型: worker
+# 职责: 灰度发布、监控灰度指标、做发布/回滚决策
+# 对应文档: docs/03-agents.md § Agent 6
+# ============================================================
+
+agent:
+  name: release
+  type: worker
+  description: 灰度发布工程师。执行灰度发布、监控灰度指标、做发布/回滚决策。
+
+model:
+  provider: openai-compatible
+  endpoint: http://higress:8080/v1/chat/completions
+  model_name: qwen-max
+  temperature: 0.1
+  max_tokens: 1024
+
+skills:
+  - name: canary-release
+    version: "2.0.0"
+    path: ../../poc/skills/canary-release
+
+tools:
+  - name: k8s_api
+    type: mcp
+    endpoint: http://higress:8080/mcp/k8s
+    permissions:
+      - write:k8s-deploy
+      - read:monitoring
+  - name: monitoring_api
+    type: mcp
+    endpoint: http://higress:8080/mcp/monitoring
+    permissions:
+      - read:monitoring
+
+concurrency:
+  max_concurrent_tasks: 1
+  task_timeout_seconds: 120
+
+escalation:
+  human_approval_required: true  # 所有 L3 生产操作需人工审批
+  auto_rollback_threshold: 0.05  # error_rate_delta > 5% → 自动回滚
+
+outbound:
+  matrix_room: "#devpilot-loop:devpilot.local"
+  log_dir: /data/logs

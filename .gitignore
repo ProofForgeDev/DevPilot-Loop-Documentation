@@ -1,0 +1,45 @@
+.DS_Store
+.~*
+*.swp
+*.tmp
+# Environment
+.env
+.env.local
+# PPTX build artifacts
+Proposal_Deck_bak.pptx
+Proposal_Deck_pre-p1p2.pptx
+Proposal_Deck.pptx.bak*
+*.pptx.pre*
+*.pptx.backup
+*.pptx.orig
+*.pptx.v*
+*.pptx.current
+# Build/helper scripts (temporary)
+apply_all_fixes.py
+final_fix.py
+fix_remaining.py
+verify_v3.py
+list_slides.py
+*.pyc
+__pycache__/
+# Python
+*.egg-info/
+.eggs/
+apply_pptx_fixes.py
+
+# Backup files
+*.bak
+*.bak.*
+*.orig
+*.backup
+*.current
+*.pre*
+
+# Temporary Python scripts
+apply_all_fixes.py
+final_fix.py
+fix_remaining.py
+verify_v3.py
+list_slides.py
+apply_pptx_fixes.py
+*.bak

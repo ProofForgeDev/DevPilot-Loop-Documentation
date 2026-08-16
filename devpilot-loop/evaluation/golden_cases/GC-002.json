@@ -1,0 +1,18 @@
+{
+  "id": "GC-002",
+  "scenario": "SQL injection in search endpoint",
+  "input": {
+    "code": "def search(query):\n    return db.execute(f\"SELECT * FROM users WHERE name LIKE '%{query}%'\")",
+    "expected_issues": [
+      "sql_injection"
+    ],
+    "expected_severity": "CRITICAL"
+  },
+  "expected_output": {
+    "status": "ok",
+    "issues_found": 1,
+    "fixes_generated": 1,
+    "confidence": 0.98
+  },
+  "actual_result": "pass"
+}

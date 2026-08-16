@@ -1,0 +1,34 @@
+{
+  "lifecycle_state": "healthy",
+  "booted_at": "2026-08-13T04:38:22.441213+00:00",
+  "agents": [],
+  "skills_loaded": 8,
+  "health_checks": true,
+  "init_sequence": [
+    {
+      "step": 1,
+      "action": "load_skills",
+      "status": "ok"
+    },
+    {
+      "step": 2,
+      "action": "init_security",
+      "status": "ok"
+    },
+    {
+      "step": 3,
+      "action": "init_observability",
+      "status": "ok"
+    },
+    {
+      "step": 4,
+      "action": "register_agents",
+      "status": "ok"
+    },
+    {
+      "step": 5,
+      "action": "health_check",
+      "status": "ok"
+    }
+  ]
+}

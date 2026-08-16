@@ -1,0 +1,50 @@
+{
+  "report_id": "ANALYSIS-1786891996",
+  "agent": "analyst",
+  "target_file": "login_module.py",
+  "scan_time": "2026-08-16T14:53:16.745193+00:00",
+  "total_findings": 4,
+  "findings_by_severity": {
+    "HIGH": 2,
+    "MEDIUM": 1,
+    "LOW": 1
+  },
+  "findings": [
+    {
+      "id": "SEC-001",
+      "severity": "HIGH",
+      "category": "security",
+      "title": "Hardcoded Secret Key",
+      "description": "SECRET_KEY is hardcoded in source code. This exposes credentials if code is committed to version control.",
+      "line": 16,
+      "recommendation": "Move SECRET_KEY to environment variable or config file."
+    },
+    {
+      "id": "SEC-002",
+      "severity": "MEDIUM",
+      "category": "input_validation",
+      "title": "Missing Input Length Validation",
+      "description": "Username and password inputs are not validated for length or format. Could lead to DoS via excessively long inputs.",
+      "line": 33,
+      "recommendation": "Add input validation for username/password length and format."
+    },
+    {
+      "id": "SEC-003",
+      "severity": "HIGH",
+      "category": "security",
+      "title": "No Rate Limiting on Login Endpoint",
+      "description": "Login endpoint has no rate limiting. Vulnerable to brute-force password attacks.",
+      "line": 30,
+      "recommendation": "Add Flask-Limiter to rate-limit login attempts."
+    },
+    {
+      "id": "SEC-004",
+      "severity": "LOW",
+      "category": "code_quality",
+      "title": "Debug Mode Enabled in Production",
+      "description": "app.run(debug=True) should not be used in production environments. Enables debugger and auto-reloader, leaking stack traces.",
+      "line": 72,
+      "recommendation": "Disable debug mode in production deployments."
+    }
+  ]
+}

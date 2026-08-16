@@ -1,0 +1,50 @@
+# ============================================================
+# DevPilot Loop — Worker Agent 配置（Fixer）
+# ============================================================
+# Agent 类型: worker
+# 职责: 生成修复 patch，创建回滚点
+# 对应文档: docs/03-agents.md § Agent 4
+# ============================================================
+
+agent:
+  name: fixer
+  type: worker
+  description: 修复执行工程师。根据根因生成修复方案、产出 patch、创建回滚点。
+
+model:
+  provider: openai-compatible
+  endpoint: http://higress:8080/v1/chat/completions
+  model_name: qwen-max
+  temperature: 0.1
+  max_tokens: 4096
+
+skills:
+  - name: fix-generator
+    version: "2.0.0"
+    path: ../../poc/skills/fix-generator
+
+tools:
+  - name: git_api
+    type: mcp
+    endpoint: http://higress:8080/mcp/git
+    permissions:
+      - write:git-branch
+      - write:git-tag
+  - name: llm_gateway
+    type: mcp
+    endpoint: http://higress:8080/mcp/llm
+    permissions:
+      - use:llm
+
+concurrency:
+  max_concurrent_tasks: 1
+  task_timeout_seconds: 60
+
+escalation:
+  max_retry_count: 3
+  human_approval_required: true  # L2 写操作需 Manager 确认
+  production_approval_required: true  # L3 push 主干需人工审批
+
+outbound:
+  matrix_room: "#devpilot-loop:devpilot.local"
+  log_dir: /data/logs

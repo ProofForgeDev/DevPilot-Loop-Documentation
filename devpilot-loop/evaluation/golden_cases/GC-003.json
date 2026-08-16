@@ -1,0 +1,18 @@
+{
+  "id": "GC-003",
+  "scenario": "Hardcoded credentials",
+  "input": {
+    "code": "API_KEY = 'sk-1234567890abcdef'\ndef connect():\n    return Client(API_KEY)",
+    "expected_issues": [
+      "hardcoded_secret"
+    ],
+    "expected_severity": "HIGH"
+  },
+  "expected_output": {
+    "status": "ok",
+    "issues_found": 1,
+    "fixes_generated": 1,
+    "confidence": 0.99
+  },
+  "actual_result": "pass"
+}

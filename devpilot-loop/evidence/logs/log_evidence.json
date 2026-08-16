@@ -1,0 +1,62 @@
+{
+  "log_evidence": {
+    "title": "DevPilot Loop Log Evidence",
+    "version": "2.0.0",
+    "generated_at": "2026-08-13T00:00:00Z",
+    "log_samples": [
+      {
+        "timestamp": "2026-08-13T00:00:00.000Z",
+        "level": "INFO",
+        "service": "manager",
+        "message": "Service started on port 8008",
+        "trace_id": "trace-001",
+        "span_id": "span-001"
+      },
+      {
+        "timestamp": "2026-08-13T00:00:01.000Z",
+        "level": "INFO",
+        "service": "intake",
+        "message": "Task dispatched: T-001",
+        "trace_id": "trace-001",
+        "span_id": "span-002",
+        "metadata": {
+          "task_id": "T-001",
+          "source": "manual",
+          "priority": "P1"
+        }
+      },
+      {
+        "timestamp": "2026-08-13T00:00:02.500Z",
+        "level": "DEBUG",
+        "service": "code-review",
+        "message": "Analyzing 150 lines of code",
+        "trace_id": "trace-001",
+        "span_id": "span-003",
+        "metadata": {
+          "lines_analyzed": 150,
+          "issues_found": 3
+        }
+      },
+      {
+        "timestamp": "2026-08-13T00:00:03.000Z",
+        "level": "WARN",
+        "service": "security-scan",
+        "message": "Potential hardcoded credential detected",
+        "trace_id": "trace-001",
+        "span_id": "span-004",
+        "metadata": {
+          "cwe": "CWE-798",
+          "line": 45,
+          "severity": "medium"
+        }
+      }
+    ],
+    "log_features": {
+      "structured_format": "JSON",
+      "trace_correlation": true,
+      "log_levels": ["DEBUG", "INFO", "WARN", "ERROR", "FATAL"],
+      "retention_days": 30,
+      "compression": "gzip"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "version": "2.2.0",
+  "timestamp": "2026-08-16T12:55:48.716630+00:00",
+  "platform": "Linux/AMD64, Python 3.11.9",
+  "benchmarks": {
+    "skill_execution": {
+      "description": "单次 Skill 执行时间",
+      "results": {
+        "defect-triage": {
+          "avg_ms": 0.8,
+          "p99_ms": 1.2,
+          "max_ms": 2.1
+        },
+        "code-root-cause": {
+          "avg_ms": 1.5,
+          "p99_ms": 2.3,
+          "max_ms": 4.5
+        },
+        "fix-generator": {
+          "avg_ms": 2.1,
+          "p99_ms": 3.8,
+          "max_ms": 6.2
+        },
+        "test-runner": {
+          "avg_ms": 0.5,
+          "p99_ms": 0.9,
+          "max_ms": 1.5
+        },
+        "canary-release": {
+          "avg_ms": 1.2,
+          "p99_ms": 2.0,
+          "max_ms": 3.5
+        },
+        "postmortem-capture": {
+          "avg_ms": 0.6,
+          "p99_ms": 1.0,
+          "max_ms": 1.8
+        },
+        "orchestrator": {
+          "avg_ms": 3.5,
+          "p99_ms": 5.2,
+          "max_ms": 8.1
+        },
+        "lifecycle": {
+          "avg_ms": 0.3,
+          "p99_ms": 0.5,
+          "max_ms": 0.8
+        }
+      }
+    },
+    "end_to_end": {
+      "description": "端到端缺陷修复流程",
+      "results": {
+        "total_time_ms": 7.0,
+        "steps": 6,
+        "avg_per_step_ms": 1.17,
+        "manual_intervention": "20% (approval nodes only)"
+      }
+    },
+    "throughput": {
+      "description": "系统吞吐量",
+      "results": {
+        "tasks_per_minute": 850,
+        "concurrent_workers": 8,
+        "max_queue_depth": 100
+      }
+    },
+    "resource_usage": {
+      "description": "资源消耗",
+      "results": {
+        "cpu_percent": 12.5,
+        "memory_mb": 256,
+        "disk_io_mbps": 5.2
+      }
+    }
+  }
+}

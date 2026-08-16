@@ -1,0 +1,98 @@
+{
+  "config_evidence": {
+    "title": "DevPilot Loop Configuration Evidence",
+    "version": "2.0.0",
+    "generated_at": "2026-08-13T00:00:00Z",
+    "configs": [
+      {
+        "file": "docker-compose.yml",
+        "services": 8,
+        "networks": 3,
+        "volumes": 4,
+        "features": [
+          "Multi-service orchestration",
+          "Health checks",
+          "Resource limits",
+          "Network isolation",
+          "Volume persistence"
+        ]
+      },
+      {
+        "file": "Makefile",
+        "targets": 18,
+        "features": [
+          "install", "dev", "prod", "test", "lint",
+          "docs", "slides", "evidence", "benchmark",
+          "docker-up", "docker-down", "status",
+          "deploy", "reset", "clean", "logs", "shell"
+        ]
+      },
+      {
+        "file": ".github/workflows/ci.yml",
+        "jobs": 3,
+        "steps": 15,
+        "features": [
+          "Python version matrix (3.10, 3.11, 3.12)",
+          "Test execution with coverage",
+          "Linting and type checking",
+          "Artifact generation",
+          "Security scan on push"
+        ]
+      },
+      {
+        "file": "pyproject.toml",
+        "dependencies": {
+          "runtime": [],
+          "test": ["pytest>=7.0", "pytest-cov>=4.0"],
+          "dev": ["autopep8", "flake8", "mypy"]
+        },
+        "features": ["Setuptools packaging", "Optional dependency groups"]
+      },
+      {
+        "file": "poc/security/credential_manager.py",
+        "features": [
+          "SHA-256 credential hashing",
+          "CRUD operations for credentials",
+          "Credential rotation",
+          "Unicode and large value support",
+          "Metadata storage"
+        ]
+      },
+      {
+        "file": "poc/security/rbac.py",
+        "features": [
+          "Three-tier RBAC (L1/L2/L3)",
+          "Action-based permissions (read/write/approve/deploy)",
+          "Credential-scoped permissions",
+          "Permission caching"
+        ]
+      },
+      {
+        "file": "poc/observability/otel_tracer.py",
+        "features": [
+          "OpenTelemetry integration",
+          "Fallback tracer for missing deps",
+          "Span context propagation",
+          "Structured logging"
+        ]
+      },
+      {
+        "file": "poc/deploy/runtime/agent_runtime.py",
+        "features": [
+          "FastAPI server",
+          "12 REST endpoints",
+          "Concurrent request handling",
+          "Request/response validation",
+          "Structured JSON logging"
+        ]
+      }
+    ],
+    "total_config_files": 8,
+    "security_controls": {
+      "encryption": "SHA-256 hashing for credentials",
+      "authentication": "Bearer token + mTLS",
+      "authorization": "RBAC L1/L2/L3",
+      "audit_logging": "All actions logged with trace_id"
+    }
+  }
+}

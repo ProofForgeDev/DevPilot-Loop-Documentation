@@ -1,0 +1,46 @@
+{
+  "name": "defect-triage",
+  "version": "2.0.0",
+  "description": "缺陷/需求归并去重、结构化为缺陷单、判定优先级",
+  "entry": "main",
+  "permissions": [
+    "read:issue-tracker"
+  ],
+  "dependencies": [
+    {
+      "name": "llm-gateway",
+      "type": "mcp"
+    },
+    {
+      "name": "issue-tracker-mcp",
+      "type": "mcp"
+    }
+  ],
+  "author": "DevPilot Loop Contributors",
+  "license": "Apache-2.0",
+  "tags": [
+    "defect",
+    "triage",
+    "intake"
+  ],
+  "failure_policy": {
+    "max_retries": 3,
+    "retry_backoff": "exponential",
+    "timeout_seconds": 120,
+    "fallback_action": "escalate_to_devlead",
+    "on_failure_notify": [
+      "devlead",
+      "knowledge"
+    ]
+  },
+  "security_boundary": {
+    "required_permissions": [
+      "read:issue-tracker"
+    ],
+    "forbidden_actions": [
+      "write:issue-tracker"
+    ],
+    "data_classification": "internal"
+  },
+  "reuse_value": "可被多个 Agent 复用；可独立安装为 Python 包"
+}

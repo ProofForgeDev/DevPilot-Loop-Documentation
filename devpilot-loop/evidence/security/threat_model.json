@@ -1,0 +1,80 @@
+{
+  "title": "DevPilot Loop 威胁模型分析",
+  "version": "2.2.0",
+  "date": "2026-08-16",
+  "methodology": "STRIDE + MITRE ATT&CK",
+  "scope": "全链路安全分析：Agent 通信、凭证管理、Skill 执行、数据持久化",
+  "threats": [
+    {
+      "id": "T-001",
+      "category": "Spoofing",
+      "description": "Agent 身份伪造",
+      "impact": "HIGH",
+      "mitigation": [
+        "Consumer Token",
+        "SHA-256 哈希"
+      ],
+      "status": "MITIGATED"
+    },
+    {
+      "id": "T-002",
+      "category": "Tampering",
+      "description": "任务数据篡改",
+      "impact": "CRITICAL",
+      "mitigation": [
+        "Matrix 签名验证",
+        "OTel Trace 完整性"
+      ],
+      "status": "MITIGATED"
+    },
+    {
+      "id": "T-003",
+      "category": "Repudiation",
+      "description": "操作抵赖",
+      "impact": "MEDIUM",
+      "mitigation": [
+        "全链路 OTel Trace",
+        "Matrix 留痕"
+      ],
+      "status": "MITIGATED"
+    },
+    {
+      "id": "T-004",
+      "category": "Info Disclosure",
+      "description": "凭证泄露",
+      "impact": "CRITICAL",
+      "mitigation": [
+        "SHA-256 哈希存储",
+        "凭证不写日志"
+      ],
+      "status": "MITIGATED"
+    },
+    {
+      "id": "T-005",
+      "category": "Elevation",
+      "description": "权限提升",
+      "impact": "HIGH",
+      "mitigation": [
+        "三级权限 L1/L2/L3",
+        "L3 人工审批"
+      ],
+      "status": "MITIGATED"
+    },
+    {
+      "id": "T-006",
+      "category": "DoS",
+      "description": "服务拒绝",
+      "impact": "MEDIUM",
+      "mitigation": [
+        "速率限制",
+        "Circuit Breaker"
+      ],
+      "status": "MITIGATED"
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "mitigated": 6,
+    "residual_risk": "LOW"
+  }
+}

@@ -1,0 +1,52 @@
+# ============================================================
+# DevPilot Loop — Worker Agent 配置（Orchestrator）
+# ============================================================
+# Agent 类型: worker
+# 职责: 多阶段任务编排、依赖解析、失败回滚、重试退避
+# 对应文档: docs/03-agents.md § Agent 8
+# ============================================================
+
+agent:
+  name: orchestrator
+  type: worker
+  description: 任务编排管理器。负责多阶段任务编排、依赖解析（拓扑排序）、失败自动回滚、重试退避、进度实时追踪。
+  
+model:
+  provider: openai-compatible
+  endpoint: http://higress:8080/v1/chat/completions
+  model_name: qwen-max
+  temperature: 0.1
+  max_tokens: 512
+
+skills:
+  - name: orchestrator
+    version: "2.0.0"
+    path: ../../skills/orchestrator
+
+tools:
+  - name: worker_api
+    type: mcp
+    endpoint: http://manager:8008
+    permissions:
+      - read:worker_status
+      - write:task_dispatch
+  - name: lifecycle_api
+    type: mcp
+    endpoint: http://manager:8008/lifecycle
+    permissions:
+      - read:state
+      - write:checkpoint
+
+concurrency:
+  max_parallel_workers: 8
+  max_concurrent_tasks: 5
+  task_timeout_seconds: 120
+
+escalation:
+  max_retry_count: 3
+  retry_backoff: [5, 15, 30]
+  strategy: parallel|sequential|pipeline
+
+outbound:
+  matrix_room: "#devpilot-loop:devpilot.local"
+  log_dir: /data/logs
